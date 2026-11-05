@@ -1,7 +1,7 @@
-# Gera a animação da Byte "caçando" o seu gráfico de contribuições
+# Gera a Teia da Byte (seu gráfico de contribuições virando uma teia)
 # e os cards de estatística (sem depender de servidor externo).
 # Roda todo dia e também pode ser disparado manualmente na aba Actions.
-name: Byte caçando commits + estatísticas
+name: Teia da Byte + estatísticas
 
 on:
   schedule:
@@ -16,18 +16,18 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
-      - name: Gerar SVGs
-        uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/byte-hunt.svg?palette=github-light&color_snake=#3a86ff
-            dist/byte-hunt-dark.svg?palette=github-dark&color_snake=#00d4ff&color_dots=#0d1626,#163066,#2f5fb3,#3a86ff,#7fb8ff
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Preparar pasta
+        run: mkdir -p dist
 
       - name: Card de atributos
         uses: stats-organization/github-readme-stats-action@v2
+        continue-on-error: true
+        timeout-minutes: 4
         with:
           card: stats
           path: dist/stats.svg
@@ -36,16 +36,35 @@ jobs:
 
       - name: Card de linguagens
         uses: stats-organization/github-readme-stats-action@v2
+        continue-on-error: true
+        timeout-minutes: 4
         with:
           card: top-langs
           path: dist/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           options: username=${{ github.repository_owner }}&layout=compact&langs_count=6&locale=pt-br&hide_border=true&bg_color=060A14&title_color=00D4FF&text_color=EEF5FF&custom_title=Magias mais usadas
 
-      - name: Publicar na branch output
-        uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
+      - name: Tecer a Teia da Byte
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/teia_da_byte.py --user "${{ github.repository_owner }}" --out dist/teia-da-byte.svg
+
+      # Publica a pasta dist numa branch própria (output). Tenta até 3 vezes,
+      # porque o GitHub às vezes recusa um push por instabilidade momentânea.
+      - name: Publicar na branch output
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          rm -rf /tmp/pub && cp -r dist /tmp/pub && cd /tmp/pub
+          git init -q -b output
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Atualiza Byte e estatísticas"
+          for tentativa in 1 2 3; do
+            if git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output; then
+              echo "Publicado na tentativa $tentativa"; exit 0
+            fi
+            echo "Push recusado, tentando de novo em 20s..."; sleep 20
+          done
+          exit 1

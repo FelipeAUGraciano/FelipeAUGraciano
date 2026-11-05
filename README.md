@@ -118,16 +118,13 @@
 
 ---
 
-## 🕷️ A Byte caçando commits
+## 🕸️ A Teia da Byte
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/FelipeAUGraciano/FelipeAUGraciano/output/byte-hunt-dark.svg"/>
-  <img src="https://raw.githubusercontent.com/FelipeAUGraciano/FelipeAUGraciano/output/byte-hunt.svg" alt="Byte caçando commits no gráfico de contribuições"/>
-</picture>
+<img src="https://raw.githubusercontent.com/FelipeAUGraciano/FelipeAUGraciano/output/teia-da-byte.svg" width="100%" alt="A Byte tecendo fios até cada contribuição do último ano"/>
 
-<sub>Cada quadradinho aceso é uma presa. Faça commits para alimentar a Byte! 🕸️</sub>
+<sub>Cada contribuição vira uma gota de orvalho na teia. Faça commits para a Byte ter onde tecer! 🕷️</sub>
 
 </div>
 
