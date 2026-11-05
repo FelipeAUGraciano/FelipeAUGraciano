@@ -1,8 +1,9 @@
-"""A Teia da Byte: transforma o gráfico de contribuições do último ano numa teia.
+"""A Teia da Byte: transforma o último ano de contribuições numa teia circular.
 
-Cada dia com contribuição vira uma gota de orvalho presa na teia. A Byte percorre
-as contribuições em ordem cronológica, puxando um fio de seda até cada uma, e as
-gotas acendem quando ela passa.
+Cada raio marca o início de um mês e cada anel é um dia da semana (domingo no
+centro, sábado na borda). Cada dia com contribuição vira uma gota de orvalho.
+A Byte fica no centro e, de tempos em tempos, puxa a teia: uma onda de vibração
+sai do centro e acende as gotas por onde passa, enquanto a teia balança ao vento.
 
 Uso:
   GITHUB_TOKEN=... python3 scripts/teia_da_byte.py --user FelipeAUGraciano --out dist/teia-da-byte.svg
@@ -20,11 +21,9 @@ import urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import byte_spider as sp  # noqa: E402
 
-W, H = 880, 236
-X0, Y0, DX, DY = 44, 74, 15.4, 16.0
+W, H = 880, 324
 LEVEL = {"NONE": 0, "FIRST_QUARTILE": 1, "SECOND_QUARTILE": 2, "THIRD_QUARTILE": 3, "FOURTH_QUARTILE": 4}
 DROP = ["#13213d", "#2f5fb3", "#3a86ff", "#7fb8ff", "#00d4ff"]
-MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
 
 QUERY = """query($login:String!){ user(login:$login){ contributionsCollection{ contributionCalendar{
   totalContributions weeks{ contributionDays{ date contributionCount contributionLevel weekday } } } } } }"""
@@ -65,161 +64,182 @@ def demo():
     return total, weeks
 
 
-def pos(wi, wd):
-    return X0 + wi * DX, Y0 + wd * DY
-
-
 def f(v):
     return f"{v:.1f}"
 
 
-def corner_web(cx, cy, r, a0, a1, n=6, rings=4):
-    """Teia em leque presa num canto."""
-    spokes, arcs = [], []
-    angs = [a0 + (a1 - a0) * i / (n - 1) for i in range(n)]
-    for a in angs:
-        spokes.append(f"M{f(cx)} {f(cy)} L{f(cx + r * math.cos(a))} {f(cy + r * math.sin(a))}")
-    for k in range(1, rings + 1):
-        rr = r * k / (rings + .4)
-        p = [(cx + rr * math.cos(a), cy + rr * math.sin(a)) for a in angs]
-        d = f"M{f(p[0][0])} {f(p[0][1])}"
-        for (x1, y1), (x2, y2) in zip(p, p[1:]):
-            mx, my = (x1 + x2) / 2, (y1 + y2) / 2
-            d += f" Q{f(mx + (cx - mx) * .12)} {f(my + (cy - my) * .12)} {f(x2)} {f(y2)}"
-        arcs.append(d)
-    return " ".join(spokes + arcs)
+CX, CY = 250, 162          # centro da teia
+R0, DR = 46, 13            # raio do primeiro anel e distância entre anéis (7 anéis = dias da semana)
+WAVE = 4.0                 # período da onda de vibração (s)
+
+
+def polar(a, r):
+    return CX + r * math.cos(a), CY + r * math.sin(a)
 
 
 def build(total, weeks, user):
-    nodes = []  # (x, y, level, date)
-    for wi, week in enumerate(weeks):
-        for d in week:
-            x, y = pos(wi, d["weekday"])
-            nodes.append((x, y, LEVEL.get(d["contributionLevel"], 0) if d["contributionCount"] else 0, d["date"]))
-    hits = [n for n in nodes if n[2] > 0]
+    days = [d for w in weeks for d in w]
+    n = len(days) or 1
+    ang = lambda i: -math.pi / 2 + 2 * math.pi * i / n
 
-    # --- a teia: fios entre nós vizinhos, levemente curvados ---
-    grid = {}
-    for wi, week in enumerate(weeks):
-        for d in week:
-            grid[(wi, d["weekday"])] = pos(wi, d["weekday"])
-    silk = []
-    for (wi, wd), (x, y) in grid.items():
-        if (wi + 1, wd) in grid:
-            x2, y2 = grid[(wi + 1, wd)]
-            silk.append(f"M{f(x)} {f(y)} Q{f((x + x2) / 2)} {f(y + 1.6)} {f(x2)} {f(y2)}")
-        if (wi, wd + 1) in grid and wi % 2 == 0:
-            x2, y2 = grid[(wi, wd + 1)]
-            silk.append(f"M{f(x)} {f(y)} Q{f(x - 1.2)} {f((y + y2) / 2)} {f(x2)} {f(y2)}")
-    # fios de ancoragem nas bordas
+    # raios: início de cada mês + um raio intermediário no meio do mês
+    month_start = [i for i, d in enumerate(days)
+                   if i > 0 and d["date"][5:7] != days[i - 1]["date"][5:7] and n - i >= 10]
+    if not month_start or month_start[0] > 10:
+        month_start = [0] + month_start
+    spoke_idx = []
+    for k, i in enumerate(month_start):
+        nxt = month_start[k + 1] if k + 1 < len(month_start) else n + month_start[0]
+        spoke_idx += [i, (i + nxt) / 2]
+    spokes = sorted(set(ang(i) % (2 * math.pi) for i in spoke_idx))
+    rmax = R0 + 6 * DR
+
+    web = []
+    for a in spokes:
+        x1, y1 = polar(a, 18); x2, y2 = polar(a, rmax + 10)
+        web.append(f"M{f(x1)} {f(y1)} L{f(x2)} {f(y2)}")
+    for k in range(7):
+        r = R0 + k * DR
+        for a1, a2 in zip(spokes, spokes[1:] + [spokes[0] + 2 * math.pi]):
+            x1, y1 = polar(a1, r); x2, y2 = polar(a2, r)
+            cx, cy = polar((a1 + a2) / 2, r * .9)      # fio cede um pouco para dentro
+            web.append(f"M{f(x1)} {f(y1)} Q{f(cx)} {f(cy)} {f(x2)} {f(y2)}")
+    # fios do miolo (espiral de captura do centro)
+    hub = []
+    for k in range(3):
+        r = 20 + k * 8
+        pts = [polar(a, r) for a in spokes]
+        hub.append("M" + " L".join(f"{f(x)} {f(y)}" for x, y in pts) + " Z")
+    # fios de ancoragem até as bordas
     anchors = []
-    for wd in range(7):
-        x, y = pos(0, wd)
-        anchors.append(f"M16 {f(y - 6 + wd * 2)} L{f(x)} {f(y)}")
-        x, y = pos(len(weeks) - 1, wd)
-        if (len(weeks) - 1, wd) in grid:
-            anchors.append(f"M{W - 16} {f(y - 6 + wd * 2)} L{f(x)} {f(y)}")
+    for a, (ex, ey) in [(-2.4, (0, 0)), (-0.7, (CX + 230, 0)), (0.75, (CX + 210, H)), (2.3, (0, H)), (3.14, (0, CY - 10))]:
+        x, y = polar(a, rmax + 10)
+        anchors.append(f"M{f(x)} {f(y)} L{ex} {ey}")
 
-    # --- rótulos de meses ---
-    labels, last = [], None
-    for wi, week in enumerate(weeks):
-        m = int(week[0]["date"][5:7])
-        if m != last and wi < len(weeks) - 2:
-            labels.append(f'<text x="{f(X0 + wi * DX - 4)}" y="{f(Y0 - 14)}" class="m">{MESES[m - 1]}</text>')
-        last = m
+    # rótulos dos meses
+    MES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
+    labels = []
+    for k, i in enumerate(month_start):
+        nxt = month_start[k + 1] if k + 1 < len(month_start) else n + month_start[0]
+        x, y = polar(ang((i + nxt) / 2), rmax + 22)
+        labels.append(f'<text x="{f(x)}" y="{f(y + 3.5)}" class="m" text-anchor="middle">{MES[int(days[i]["date"][5:7]) - 1]}</text>')
 
-    # --- caminho da Byte: entra pela esquerda e visita cada contribuição ---
-    start = (X0 - 30, Y0 + 3 * DY)
-    pts = [start] + [(x, y) for x, y, _, _ in hits]
-    if len(pts) == 1:
-        pts.append((W / 2, Y0 + 3 * DY))
-    segs = [math.dist(pts[i], pts[i + 1]) for i in range(len(pts) - 1)]
-    L = sum(segs) or 1
-    path = "M" + " L".join(f"{f(x)} {f(y)}" for x, y in pts)
-
-    TRAVEL = 0.82                              # fração do ciclo em que ela anda
-    D = max(10.0, min(28.0, 3.0 + L / 70))    # duração do ciclo em segundos
-    acc, arrive = 0.0, []
-    for s in segs:
-        acc += s
-        arrive.append(acc / L * TRAVEL)
-
-    drops = []
-    for (x, y, lv, date), t in zip(hits, arrive):
-        t = min(max(t, 0.001), 0.95)
+    # gotas de orvalho
+    drops, active = [], []
+    for i, d in enumerate(days):
+        if not d["contributionCount"]:
+            continue
+        lv = LEVEL.get(d["contributionLevel"], 1) or 1
+        a = ang(i)
+        # posição sobre o fio cedido entre dois raios
+        a_mod = a % (2 * math.pi)
+        prev = max([s for s in spokes if s <= a_mod] or [spokes[-1] - 2 * math.pi])
+        nxts = [s for s in spokes if s > a_mod] or [spokes[0] + 2 * math.pi]
+        frac = (a_mod - prev) / ((nxts[0] - prev) or 1)
+        r = (R0 + d["weekday"] * DR) * (1 - .1 * math.sin(math.pi * frac) ** 2 * .9)
+        x, y = polar(a, r)
+        active.append(d)
+        rad = 2.6 + lv * .7
         c = DROP[lv]
-        kt = f"0;{t:.4f};{min(t + .02, .96):.4f};0.96;1"
+        t0 = (r - 22) / (rmax + 10 - 22) * WAVE * .55        # quando a onda passa por aqui
+        tw = (i * .37) % 3
         drops.append(f'''
-      <g>
-        <circle cx="{f(x)}" cy="{f(y)}" r="{3.2 + lv * .55:.2f}" fill="{c}" opacity=".18">
-          <animate attributeName="opacity" dur="{D:.1f}s" repeatCount="indefinite" keyTimes="{kt}" values=".18;.18;1;1;.18"/>
-        </circle>
-        <circle cx="{f(x)}" cy="{f(y)}" r="9" fill="{c}" opacity="0" filter="url(#tglow)">
-          <animate attributeName="opacity" dur="{D:.1f}s" repeatCount="indefinite" keyTimes="{kt}" values="0;0;.55;.25;0"/>
-        </circle>
-        <title>{date}</title>
-      </g>''')
+    <g>
+      <circle cx="{f(x)}" cy="{f(y)}" r="{rad + 5:.1f}" fill="{c}" opacity="0" filter="url(#tglow)">
+        <animate attributeName="opacity" dur="{WAVE}s" begin="{t0:.2f}s" repeatCount="indefinite" values="0;.85;0" keyTimes="0;.12;.5"/>
+      </circle>
+      <circle cx="{f(x)}" cy="{f(y)}" r="{rad:.1f}" fill="url(#drop{lv})">
+        <animate attributeName="opacity" dur="3s" begin="{tw:.2f}s" repeatCount="indefinite" values=".75;1;.75"/>
+      </circle>
+      <circle cx="{f(x - rad * .35)}" cy="{f(y - rad * .35)}" r="{rad * .3:.1f}" fill="#fff" opacity=".85"/>
+      <title>{d["date"]}: {d["contributionCount"]} contribuiç{"ão" if d["contributionCount"] == 1 else "ões"}</title>
+    </g>''')
 
-    dots = "".join(f'<circle cx="{f(x)}" cy="{f(y)}" r="1.5" fill="#1e3a6e"/>' for x, y, lv, _ in nodes if lv == 0)
+    # números para o painel
+    by_month = {}
+    for d in active:
+        by_month[d["date"][:7]] = by_month.get(d["date"][:7], 0) + d["contributionCount"]
+    best_m = max(by_month, key=by_month.get) if by_month else None
+    best_d = max(active, key=lambda d: d["contributionCount"]) if active else None
+    def br(date):
+        return f"{date[8:10]}/{date[5:7]}"
+    lines = [
+        (f"{total}", f"contribuiç{'ão' if total == 1 else 'ões'} no último ano"),
+        (f"{len(active)}", f"dia{'s' if len(active) != 1 else ''} tecido{'s' if len(active) != 1 else ''} na teia"),
+    ]
+    if best_m:
+        lines.append((MES[int(best_m[5:7]) - 1].capitalize(), "mês mais ativo"))
+    if best_d:
+        lines.append((br(best_d["date"]), f"maior gota ({best_d['contributionCount']} contribuiç{'ão' if best_d['contributionCount'] == 1 else 'ões'})"))
+    panel = "".join(
+        f'<g transform="translate(540,{124 + k * 36})"><text class="big">{v}</text><text x="{16 + len(v) * 13}" y="-1" class="s">{t}</text></g>'
+        for k, (v, t) in enumerate(lines))
 
     byte = sp.spider("tb", 2)
-    hit_txt = f"{total} contribuiç{'ão' if total == 1 else 'ões'} no último ano" if total else "A teia está esperando o primeiro fio"
+    spline = 'calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" keyTimes="0;.5;1"'
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">
   <defs>
     {sp.defs("tb")}
-    <filter id="tglow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3"/></filter>
-    <linearGradient id="thread" x1="0" x2="1"><stop offset="0" stop-color="#7fb8ff"/><stop offset="1" stop-color="#cfe2ff"/></linearGradient>
+    <filter id="tglow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3.2"/></filter>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#3a86ff" stop-opacity=".18"/><stop offset="1" stop-color="#3a86ff" stop-opacity="0"/></radialGradient>
+    {"".join(f'<radialGradient id="drop{k}" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="{DROP[k]}"/><stop offset="1" stop-color="{DROP[max(k - 1, 1)]}"/></radialGradient>' for k in range(1, 5))}
+    <clipPath id="card"><rect width="{W}" height="{H}" rx="6"/></clipPath>
     <style>
       .t {{ font-family:'Segoe UI', Ubuntu, sans-serif }}
-      .h {{ font-weight:600; font-size:18px; fill:#00D4FF }}
-      .s {{ font-size:12px; fill:#7f9cc9 }}
+      .h {{ font-family:'Segoe UI', Ubuntu, sans-serif; font-weight:600; font-size:22px; fill:#00D4FF }}
+      .big {{ font-family:'Segoe UI', Ubuntu, sans-serif; font-weight:700; font-size:22px; fill:#EEF5FF }}
+      .s {{ font-family:'Segoe UI', Ubuntu, sans-serif; font-size:13px; fill:#7f9cc9 }}
       .m {{ font-family:'Segoe UI', Ubuntu, sans-serif; font-size:10px; fill:#5f7ba6 }}
 {sp.CSS}
     </style>
   </defs>
-  <rect width="{W}" height="{H}" rx="6" fill="#060A14"/>
-  <text x="24" y="32" class="t h">A Teia da Byte</text>
-  <text x="{W - 84}" y="32" class="t s" text-anchor="end">{hit_txt}</text>
-  {"".join(labels)}
+  <g clip-path="url(#card)">
+  <rect width="{W}" height="{H}" fill="#060A14"/>
+  <circle cx="{CX}" cy="{CY}" r="{rmax + 30}" fill="url(#halo)"/>
 
-  <!-- teias de canto -->
-  <g fill="none" stroke="#7fb8ff" stroke-opacity=".16" stroke-width=".9">
-    <path d="{corner_web(W - 6, 6, 70, math.pi / 2, math.pi)}"/>
-    <path d="{corner_web(6, H - 6, 60, -math.pi / 2, 0)}"/>
-  </g>
-
-  <!-- teia -->
-  <g fill="none" stroke="#3a86ff" stroke-opacity=".13" stroke-width=".8">
-    <path d="{" ".join(silk)}"/>
-    <path d="{" ".join(anchors)}" stroke-opacity=".18"/>
-  </g>
-  {dots}
-
-  <!-- fio que a Byte puxa -->
-  <path d="{path}" fill="none" stroke="url(#thread)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"
-        pathLength="1000" stroke-dasharray="1000" stroke-dashoffset="1000" opacity=".85">
-    <animate attributeName="stroke-dashoffset" dur="{D:.1f}s" repeatCount="indefinite" calcMode="linear"
-             keyTimes="0;{TRAVEL};0.96;1" values="1000;0;0;1000"/>
-    <animate attributeName="opacity" dur="{D:.1f}s" repeatCount="indefinite" keyTimes="0;0.9;0.97;1" values=".85;.85;0;0"/>
-  </path>
-
-  <!-- gotas de orvalho (contribuições) -->
-  {"".join(drops)}
-
-  <!-- Byte -->
+  <!-- teia (balança devagar com o vento) -->
   <g>
-    <animateMotion dur="{D:.1f}s" repeatCount="indefinite" calcMode="linear" path="{path}"
-                   keyPoints="0;1;1" keyTimes="0;{TRAVEL};1"/>
-    <g transform="translate(0,-10) scale(.26)">{byte}</g>
+    <animateTransform attributeName="transform" type="rotate" dur="9s" repeatCount="indefinite" {spline}
+      values="-1.4 {CX} {CY};1.4 {CX} {CY};-1.4 {CX} {CY}"/>
+    <g fill="none" stroke-linecap="round">
+      <path d="{" ".join(anchors)}" stroke="#7fb8ff" stroke-opacity=".22" stroke-width="1"/>
+      <path d="{" ".join(web)}" stroke="#7fb8ff" stroke-opacity=".2" stroke-width=".9"/>
+      <path d="{" ".join(hub)}" stroke="#7fb8ff" stroke-opacity=".3" stroke-width=".9"/>
+    </g>
+    {"".join(labels)}
+
+    <!-- onda de vibração saindo do centro -->
+    <circle cx="{CX}" cy="{CY}" r="22" fill="none" stroke="#7fb8ff" stroke-width="2" opacity="0">
+      <animate attributeName="r" dur="{WAVE}s" repeatCount="indefinite" values="22;{rmax + 14}" keyTimes="0;.55" calcMode="spline" keySplines=".2 .6 .4 1"/>
+      <animate attributeName="opacity" dur="{WAVE}s" repeatCount="indefinite" values=".55;0;0" keyTimes="0;.55;1"/>
+      <animate attributeName="stroke-width" dur="{WAVE}s" repeatCount="indefinite" values="3;.5;.5" keyTimes="0;.55;1"/>
+    </circle>
+
+    <!-- gotas de orvalho = contribuições -->
+    {"".join(drops)}
+
+    <!-- Byte no centro da teia, dando um puxão a cada onda -->
+    <g transform="translate({CX},{CY + 4})">
+      <g>
+        <animateTransform attributeName="transform" type="translate" dur="{WAVE}s" repeatCount="indefinite"
+          values="0 0;0 3;0 0;0 0" keyTimes="0;.06;.2;1" calcMode="spline" keySplines=".3 0 .7 1;.3 0 .7 1;0 0 1 1"/>
+        <g transform="scale(.3)">{byte}</g>
+      </g>
+    </g>
   </g>
 
-  <text x="64" y="{H - 16}" class="t s">Cada contribuição vira uma gota na teia, e a Byte tece um fio até cada uma.</text>
-  <g transform="translate({W - 170},{H - 20})" class="t">
-    <text class="s" x="0" y="4">menos</text>
-    {"".join(f'<circle cx="{46 + i * 16}" cy="0" r="{3.2 + i * .55:.1f}" fill="{c}"/>' for i, c in enumerate(DROP))}
-    <text class="s" x="{46 + 5 * 16}" y="4">mais</text>
+  <!-- painel -->
+  <text x="540" y="70" class="h">A Teia da Byte</text>
+  <text x="540" y="92" class="s">O seu último ano de contribuições, tecido em seda.</text>
+  {panel}
+  <g transform="translate(540,284)">
+    <text class="s" y="4">menos</text>
+    {"".join(f'<circle cx="{52 + k * 18}" cy="0" r="{2.6 + k * .7:.1f}" fill="url(#drop{k})"/>' for k in range(1, 5))}
+    <text class="s" x="{52 + 4 * 18 + 14}" y="4">mais</text>
   </g>
+  </g>
+  <rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="6" fill="none" stroke="#1e3a6e"/>
 </svg>
 '''
 
