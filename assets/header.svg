@@ -1,0 +1,312 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060a14"/>
+      <stop offset="0.6" stop-color="#0a1226"/>
+      <stop offset="1" stop-color="#0f1d3d"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00d4ff"/>
+      <stop offset="0.5" stop-color="#3a86ff"/>
+      <stop offset="1" stop-color="#7fb8ff"/>
+    </linearGradient>
+    <radialGradient id="abd" cx="0.38" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#2f5fb3"/>
+      <stop offset="0.55" stop-color="#163066"/>
+      <stop offset="1" stop-color="#0a1838"/>
+    </radialGradient>
+    <radialGradient id="head" cx="0.4" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#3d73cc"/>
+      <stop offset="1" stop-color="#142a57"/>
+    </radialGradient>
+    
+    <radialGradient id="hdabd" cx="0.36" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#4146b8"/><stop offset="0.5" stop-color="#22217a"/><stop offset="1" stop-color="#0d0c38"/>
+    </radialGradient>
+    <radialGradient id="hdhead" cx="0.4" cy="0.25" r="0.85">
+      <stop offset="0" stop-color="#3a3ca6"/><stop offset="0.65" stop-color="#1f1e6b"/><stop offset="1" stop-color="#0f0e3d"/>
+    </radialGradient>
+    <linearGradient id="hdleg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2e2d86"/><stop offset="1" stop-color="#14134a"/>
+    </linearGradient>
+    <linearGradient id="hdmoon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef0ff"/><stop offset="0.45" stop-color="#a9b0ec"/><stop offset="0.75" stop-color="#c9b9ff"/><stop offset="1" stop-color="#7a82d0"/>
+    </linearGradient>
+    <linearGradient id="hdsilk" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9d6ff"/><stop offset="0.5" stop-color="#9fb4f0"/><stop offset="1" stop-color="#6f86d8"/>
+    </linearGradient>
+    <linearGradient id="hdcrysL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2f6ff"/><stop offset="1" stop-color="#7cc8ff"/>
+    </linearGradient>
+    <linearGradient id="hdcrysR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7cc8ff"/><stop offset="1" stop-color="#2f6fe0"/>
+    </linearGradient>
+    <radialGradient id="hdeye" cx="0.42" cy="0.38" r="0.7">
+      <stop offset="0" stop-color="#ffd877"/><stop offset="0.55" stop-color="#f5a623"/><stop offset="1" stop-color="#b8640a"/>
+    </radialGradient>
+    <radialGradient id="hdruneglow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#5fb8ff" stop-opacity=".55"/><stop offset="1" stop-color="#5fb8ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="hdglow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="halo"><stop offset="0" stop-color="#3a86ff" stop-opacity=".22"/><stop offset="1" stop-color="#3a86ff" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="frame"><rect width="900" height="280" rx="18"/></clipPath>
+    <style>
+      .web { stroke:#3a86ff; stroke-opacity:.35; fill:none; stroke-width:1.2 }
+      .star { fill:#bcd6ff; animation: tw 3s ease-in-out infinite }
+      .s2 { animation-delay:1s } .s3 { animation-delay:2s }
+      @keyframes tw { 0%,100%{opacity:.15} 50%{opacity:.9} }
+
+      .bob { animation: bob 3.2s ease-in-out infinite }
+      @keyframes bob { 0%,100%{transform:translate(735px,150px)} 50%{transform:translate(735px,166px)} }
+      .thread { stroke:#cfe2ff; stroke-opacity:.7; stroke-width:1.4; }
+
+      .leg { stroke:#1b3a75; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; fill:none }
+      .legtip { stroke:#00d4ff; stroke-width:5; stroke-linecap:round; fill:none }
+      .wiggleL { transform-box:fill-box; transform-origin:100% 0; animation: wl 1.6s ease-in-out infinite }
+      .wiggleR { transform-box:fill-box; transform-origin:0 0; animation: wr 1.6s ease-in-out infinite }
+      .d1{animation-delay:.2s} .d2{animation-delay:.4s} .d3{animation-delay:.6s}
+      @keyframes wl { 0%,100%{transform:rotate(0)} 50%{transform:rotate(7deg)} }
+      @keyframes wr { 0%,100%{transform:rotate(0)} 50%{transform:rotate(-7deg)} }
+
+      .eyes { transform-box:fill-box; transform-origin:50% 50%; animation: blink 4.5s infinite }
+      @keyframes blink { 0%,92%,100%{transform:scaleY(1)} 95%{transform:scaleY(.1)} }
+
+      .code { animation: pulse 2.4s ease-in-out infinite }
+      @keyframes pulse { 0%,100%{opacity:.65} 50%{opacity:1} }
+
+      .bubble { animation: pop 6s ease-in-out infinite; transform-box:fill-box; transform-origin:100% 100% }
+      @keyframes pop { 0%,8%{opacity:0; transform:scale(.6)} 14%,80%{opacity:1; transform:scale(1)} 88%,100%{opacity:0; transform:scale(.6)} }
+
+      .xp { animation: fill 3.5s ease-out forwards }
+      @keyframes fill { from{width:0} to{width:197px} }
+
+
+      .byte-breath { animation: bytebreath 2.6s ease-in-out infinite }
+      @keyframes bytebreath { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+      .byte-eyes { transform-box:fill-box; transform-origin:50% 50%; animation: byteblink 4.5s infinite }
+      @keyframes byteblink { 0%,93%,100%{transform:scaleY(1)} 96%{transform:scaleY(.1)} }
+      .byte-rune { animation: byterune 2.4s ease-in-out infinite }
+      @keyframes byterune { 0%,100%{opacity:.7} 50%{opacity:1} }
+      .byte-mini { animation: bytemini 1.8s ease-in-out infinite }
+      .byte-mini.m2{animation-delay:.3s} .byte-mini.m3{animation-delay:.6s}
+      @keyframes bytemini { 0%,100%{opacity:.65} 50%{opacity:1} }
+      .byte-blade { animation: byteglint 2s ease-in-out infinite }
+      @keyframes byteglint { 0%,100%{filter:brightness(1)} 50%{filter:brightness(1.35)} }
+      .speed { opacity:.18; animation: spd 2.6s ease-in-out infinite }
+      @keyframes spd { 0%,100%{opacity:.08} 50%{opacity:.25} }
+      .t  { font-family: 'Courier New', Consolas, monospace; font-weight:700 }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="900" height="280" fill="url(#bg)"/>
+
+    <!-- estrelas -->
+    <circle class="star" cx="60" cy="40" r="1.6"/>
+    <circle class="star s2" cx="190" cy="25" r="1.2"/>
+    <circle class="star s3" cx="420" cy="50" r="1.5"/>
+    <circle class="star" cx="520" cy="230" r="1.3"/>
+    <circle class="star s2" cx="600" cy="30" r="1.1"/>
+    <circle class="star s3" cx="330" cy="250" r="1.4"/>
+    <circle class="star s2" cx="40" cy="240" r="1.2"/>
+
+    <!-- teia no canto superior direito -->
+    <g class="web" transform="translate(900,0)">
+      <path d="M0 0 L-260 0 M0 0 L-250 70 M0 0 L-215 140 M0 0 L-150 200 M0 0 L-75 245 M0 0 L0 260"/>
+      <path d="M-60 0 Q-55 15 -58 16 Q-50 30 -50 35 Q-36 44 -35 47 Q-18 56 -17 57 Q-4 60 0 60"/>
+      <path d="M-120 0 Q-110 30 -116 32 Q-98 62 -100 70 Q-72 90 -70 94 Q-38 112 -35 114 Q-8 120 0 120"/>
+      <path d="M-185 0 Q-170 45 -178 50 Q-150 96 -153 108 Q-110 138 -107 144 Q-58 170 -54 175 Q-12 182 0 185"/>
+      <path d="M-250 0 Q-232 62 -242 68 Q-205 128 -210 138 Q-150 185 -146 196 Q-80 228 -73 240 Q-18 250 0 255"/>
+    </g>
+
+    <!-- título -->
+    <text x="50" y="98" class="t" font-size="46" fill="url(#title)">FELIPE GRACIANO</text>
+    <text x="52" y="132" class="t" font-size="16" fill="#a9c6f5">Lv. 17 · Classe: Dev Multiplataforma · Guilda: Simova</text>
+
+    <!-- barra de XP -->
+    <text x="52" y="170" class="t" font-size="13" fill="#00d4ff">XP</text>
+    <rect x="80" y="159" width="290" height="14" rx="7" fill="#12203d" stroke="#24477f"/>
+    <rect class="xp" x="80" y="159" width="197" height="14" rx="7" fill="url(#title)"/>
+    <text x="382" y="171" class="t" font-size="12" fill="#7f9cc9">17 / 25 repos</text>
+
+    <text x="52" y="215" class="t" font-size="13" fill="#5f7ba6">▶ São José dos Campos - SP · Pressione [scroll]</text>
+
+
+    <!-- linhas de impacto -->
+    <g class="speed" stroke="#3a86ff" stroke-width="1.2"><line x1="774" y1="173" x2="990" y2="217"/><line x1="768" y1="187" x2="951" y2="310"/><line x1="757" y1="198" x2="879" y2="382"/><line x1="743" y1="204" x2="785" y2="420"/><line x1="727" y1="204" x2="683" y2="420"/><line x1="713" y1="198" x2="590" y2="381"/><line x1="702" y1="187" x2="518" y2="309"/><line x1="696" y1="173" x2="480" y2="215"/><line x1="696" y1="157" x2="480" y2="113"/><line x1="702" y1="143" x2="519" y2="20"/><line x1="713" y1="132" x2="591" y2="-52"/><line x1="727" y1="126" x2="685" y2="-90"/><line x1="743" y1="126" x2="787" y2="-90"/><line x1="757" y1="132" x2="880" y2="-51"/><line x1="768" y1="143" x2="952" y2="21"/><line x1="774" y1="157" x2="990" y2="115"/></g>
+    <circle cx="735" cy="160" r="110" fill="url(#halo)"/>
+
+    <!-- Byte, a Cavaleira de Seda (mascote original) -->
+    <g transform="translate(735,165)">
+    <g class="byte-breath">
+      <ellipse cx="0" cy="76" rx="124" ry="9" fill="#000" opacity=".4"/>
+      
+      <g>
+        <path d="M-22.0 -4.0 L-98.0 -30.0 L-119.0 34.4" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M-22.0 -4.0 L-98.0 -30.0" stroke="url(#hdleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M-98.0 -30.0 L-119.0 34.4" stroke="url(#hdleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M-21.2 -6.3 L-97.2 -32.3" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="-70.2 -20.5 -63.3 -23.1 -58.4 -16.4 -64.5 -14.7" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-70.2 -20.5 L-63.8 -18.3 L-58.4 -16.4" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <polygon points="-122.2 33.3 -128.0 62.0 -115.8 35.5" fill="#24237a" stroke="#07061f" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="-119.0" cy="34.4" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="-98.0" cy="-30.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="-99.4" cy="-31.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M22.0 -4.0 L98.0 -30.0 L119.0 34.4" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22.0 -4.0 L98.0 -30.0" stroke="url(#hdleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M98.0 -30.0 L119.0 34.4" stroke="url(#hdleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M21.2 -6.3 L97.2 -32.3" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="70.2 -20.5 66.3 -14.2 58.4 -16.4 62.1 -21.6" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M70.2 -20.5 L63.8 -18.3 L58.4 -16.4" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <polygon points="115.8 35.5 128.0 62.0 122.2 33.3" fill="#24237a" stroke="#07061f" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="119.0" cy="34.4" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="98.0" cy="-30.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="96.6" cy="-31.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M-24.0 2.0 L-86.0 -46.0 L-101.4 33.8" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M-24.0 2.0 L-86.0 -46.0" stroke="url(#hdleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M-86.0 -46.0 L-101.4 33.8" stroke="url(#hdleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M-22.5 0.1 L-84.5 -47.9" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="-63.4 -28.5 -56.1 -28.7 -53.6 -20.9 -59.9 -21.2" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-63.4 -28.5 L-58.1 -24.4 L-53.6 -20.9" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <polygon points="-104.7 33.2 -108.0 68.0 -98.1 34.4" fill="#24237a" stroke="#07061f" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="-101.4" cy="33.8" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="-86.0" cy="-46.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="-87.4" cy="-47.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M24.0 2.0 L86.0 -46.0 L101.4 33.8" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24.0 2.0 L86.0 -46.0" stroke="url(#hdleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M86.0 -46.0 L101.4 33.8" stroke="url(#hdleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M22.5 0.1 L84.5 -47.9" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="63.4 -28.5 61.8 -21.3 53.6 -20.9 55.5 -27.0" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M63.4 -28.5 L58.1 -24.4 L53.6 -20.9" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <polygon points="98.1 34.4 108.0 68.0 104.7 33.2" fill="#24237a" stroke="#07061f" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="101.4" cy="33.8" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="86.0" cy="-46.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="84.6" cy="-47.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <!-- ponta de trás do cachecol -->
+      <path fill="url(#hdsilk)" fill-opacity=".75" stroke="#5a6fc4" stroke-width="1.3" stroke-linejoin="round" d="M-28 20 C-46 26 -70 18 -86 4 C-94 -2 -104 -2 -114 -8 L-108 2 L-120 4 C-104 14 -90 22 -74 26 C-58 30 -42 30 -26 28 Z">
+        <animate attributeName="d" dur="1.9s" repeatCount="indefinite" begin="-.5s" values="M-28 20 C-46 26 -70 18 -86 4 C-94 -2 -104 -2 -114 -8 L-108 2 L-120 4 C-104 14 -90 22 -74 26 C-58 30 -42 30 -26 28 Z;M-28 20 C-48 22 -70 10 -88 8 C-98 8 -108 12 -118 10 L-110 18 L-120 24 C-104 28 -90 30 -74 32 C-58 34 -42 32 -26 28 Z;M-28 20 C-46 26 -70 18 -86 4 C-94 -2 -104 -2 -114 -8 L-108 2 L-120 4 C-104 14 -90 22 -74 26 C-58 30 -42 30 -26 28 Z"/>
+      </path>
+      <polygon points="-21.9 -101.7 -11.9 -96.2 -14.7 -83.8 -22.9 -89.2" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-21.9 -101.7 L-18.0 -92.0 L-14.7 -83.8" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/><polygon points="21.9 -101.7 25.3 -90.8 14.7 -83.8 12.5 -93.3" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M21.9 -101.7 L18.0 -92.0 L14.7 -83.8" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/><polygon points="0.0 -109.7 8.1 -99.8 0.0 -88.1 -6.3 -97.1" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M0.0 -109.7 L0.0 -98.0 L0.0 -88.1" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <!-- abdômen com a runa espiral -->
+      <circle cx="0" cy="-40" r="52" fill="url(#hdabd)" stroke="#07061f" stroke-width="2.6"/>
+      <path d="M-40 -66 Q-26 -86 0 -91" stroke="#6f78ff" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".8"/>
+      <circle class="byte-rune" cx="0" cy="-52" r="26" fill="url(#hdruneglow)"/>
+      <path class="byte-rune" d="M0.0 -53.5 L0.4 -53.7 L0.9 -53.8 L1.5 -53.7 L2.1 -53.4 L2.6 -53.0 L3.0 -52.4 L3.3 -51.6 L3.3 -50.8 L3.2 -49.9 L2.7 -49.0 L2.1 -48.2 L1.1 -47.5 L0.1 -47.1 L-1.2 -47.0 L-2.4 -47.2 L-3.7 -47.7 L-4.8 -48.6 L-5.7 -49.7 L-6.3 -51.1 L-6.6 -52.7 L-6.5 -54.3 L-6.0 -56.0 L-5.0 -57.5 L-3.7 -58.7 L-2.1 -59.7 L-0.2 -60.2 L1.8 -60.3 L3.9 -59.8 L5.8 -58.9 L7.5 -57.4 L8.8 -55.6 L9.7 -53.4 L10.0 -51.1 L9.7 -48.6 L8.8 -46.3 L7.4 -44.1 L5.4 -42.4 L3.0 -41.1 L0.4 -40.4 L-2.5 -40.4 L-5.3 -41.1 L-7.9 -42.5 L-10.1 -44.5 L-11.9 -47.0 L-13.0 -49.9 L-13.3 -53.1 L-12.9 -56.4 L-11.7 -59.4 L-9.8 -62.2 L-7.2 -64.5 L-4.1 -66.1 L-0.6 -66.9 L3.0 -66.9 L6.6 -66.0 L9.9 -64.2 L12.7 -61.7 L14.9 -58.4 L16.3 -54.7 L16.7 -50.8 L16.2 -46.7" stroke="#5fb8ff" stroke-width="3.4" fill="none" stroke-linecap="round" filter="url(#hdglow)"/>
+      <polygon points="-51.5 -67.0 -38.9 -64.6 -37.7 -50.4 -48.3 -53.3" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-51.5 -67.0 L-44.0 -58.0 L-37.7 -50.4" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <polygon points="51.5 -67.0 51.4 -54.2 37.7 -50.4 38.6 -61.3" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M51.5 -67.0 L44.0 -58.0 L37.7 -50.4" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <polygon points="-58.9 -28.2 -52.6 -35.9 -42.4 -31.5 -48.4 -25.3" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-58.9 -28.2 L-50.0 -30.0 L-42.4 -31.5" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <polygon points="58.9 -28.2 50.1 -23.5 42.4 -31.5 50.3 -34.9" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M58.9 -28.2 L50.0 -30.0 L42.4 -31.5" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      
+      <g>
+        <path d="M-24.0 8.0 L-62.0 -42.0 L-71.9 28.7" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M-24.0 8.0 L-62.0 -42.0" stroke="url(#hdleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M-62.0 -42.0 L-71.9 28.7" stroke="url(#hdleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M-22.1 6.5 L-60.1 -43.5" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="-49.0 -24.9 -41.8 -23.2 -41.4 -14.9 -47.5 -16.9" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-49.0 -24.9 L-44.9 -19.5 L-41.4 -14.9" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <g class="byte-blade" filter="url(#hdglow)">
+          <polygon points="-71.9 28.7 -80.5 42.9 -78.8 77.9 -74.0 43.8" fill="url(#hdcrysL)"/>
+          <polygon points="-71.9 28.7 -67.6 44.7 -78.8 77.9 -74.0 43.8" fill="url(#hdcrysR)"/>
+          <polygon points="-71.9 28.7 -80.5 42.9 -78.8 77.9 -67.6 44.7" fill="none" stroke="#1d4fa0" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+        <circle cx="-71.9" cy="28.7" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="-62.0" cy="-42.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="-63.4" cy="-43.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M24.0 8.0 L62.0 -42.0 L71.9 28.7" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24.0 8.0 L62.0 -42.0" stroke="url(#hdleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M62.0 -42.0 L71.9 28.7" stroke="url(#hdleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M22.1 6.5 L60.1 -43.5" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="49.0 -24.9 49.3 -17.5 41.4 -14.9 41.7 -21.3" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M49.0 -24.9 L44.9 -19.5 L41.4 -14.9" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <g class="byte-blade" filter="url(#hdglow)">
+          <polygon points="71.9 28.7 67.6 44.7 78.8 77.9 74.0 43.8" fill="url(#hdcrysL)"/>
+          <polygon points="71.9 28.7 80.5 42.9 78.8 77.9 74.0 43.8" fill="url(#hdcrysR)"/>
+          <polygon points="71.9 28.7 67.6 44.7 78.8 77.9 80.5 42.9" fill="none" stroke="#1d4fa0" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+        <circle cx="71.9" cy="28.7" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="62.0" cy="-42.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="60.6" cy="-43.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M-20.0 20.0 L-58.0 2.0 L-49.3 42.9" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M-20.0 20.0 L-58.0 2.0" stroke="url(#hdleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M-58.0 2.0 L-49.3 42.9" stroke="url(#hdleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M-19.0 17.8 L-57.0 -0.2" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="-47.0 7.2 -39.8 5.4 -35.7 12.5 -42.0 13.6" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-47.0 7.2 L-40.9 10.1 L-35.7 12.5" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <g class="byte-blade" filter="url(#hdglow)">
+          <polygon points="-49.3 42.9 -53.8 53.0 -42.8 73.9 -47.5 51.7" fill="url(#hdcrysL)"/>
+          <polygon points="-49.3 42.9 -41.1 50.3 -42.8 73.9 -47.5 51.7" fill="url(#hdcrysR)"/>
+          <polygon points="-49.3 42.9 -53.8 53.0 -42.8 73.9 -41.1 50.3" fill="none" stroke="#1d4fa0" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+        <circle cx="-49.3" cy="42.9" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="-58.0" cy="2.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="-59.4" cy="0.6" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M20.0 20.0 L58.0 2.0 L49.3 42.9" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20.0 20.0 L58.0 2.0" stroke="url(#hdleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M58.0 2.0 L49.3 42.9" stroke="url(#hdleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M19.0 17.8 L57.0 -0.2" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="47.0 7.2 43.8 13.9 35.7 12.5 38.9 7.0" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M47.0 7.2 L40.9 10.1 L35.7 12.5" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <g class="byte-blade" filter="url(#hdglow)">
+          <polygon points="49.3 42.9 41.1 50.3 42.8 73.9 47.5 51.7" fill="url(#hdcrysL)"/>
+          <polygon points="49.3 42.9 53.8 53.0 42.8 73.9 47.5 51.7" fill="url(#hdcrysR)"/>
+          <polygon points="49.3 42.9 41.1 50.3 42.8 73.9 53.8 53.0" fill="none" stroke="#1d4fa0" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+        <circle cx="49.3" cy="42.9" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="58.0" cy="2.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="56.6" cy="0.6" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <!-- cabeça -->
+      <ellipse cx="0" cy="10" rx="38" ry="31" fill="url(#hdhead)" stroke="#07061f" stroke-width="2.6"/>
+      <path d="M-24 -10 Q-14 -20 4 -21" stroke="#6f78ff" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".8"/>
+      <polygon points="-40.7 -7.8 -31.3 -4.4 -32.0 6.6 -39.8 3.1" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-40.7 -7.8 L-36.0 0.0 L-32.0 6.6" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <polygon points="40.7 -7.8 42.1 2.0 32.0 6.6 31.4 -1.9" fill="url(#hdmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M40.7 -7.8 L36.0 0.0 L32.0 6.6" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <g class="byte-blade" filter="url(#hdglow)"><polygon points="-15.6 -18.4 -34.0 -42.0 -26.3 -27.7" fill="url(#hdcrysL)"/><polygon points="-24.4 -13.6 -34.0 -42.0 -26.3 -27.7" fill="url(#hdcrysR)"/><polygon points="-15.6 -18.4 -34.0 -42.0 -24.4 -13.6" fill="none" stroke="#1d4fa0" stroke-width="1.4" stroke-linejoin="round"/></g><g class="byte-blade" filter="url(#hdglow)"><polygon points="24.4 -13.6 34.0 -42.0 26.3 -27.7" fill="url(#hdcrysL)"/><polygon points="15.6 -18.4 34.0 -42.0 26.3 -27.7" fill="url(#hdcrysR)"/><polygon points="24.4 -13.6 34.0 -42.0 15.6 -18.4" fill="none" stroke="#1d4fa0" stroke-width="1.4" stroke-linejoin="round"/></g>
+      <!-- 6 olhos pequenos luminosos -->
+      <g filter="url(#hdglow)">
+        <circle class="byte-mini" cx="-5" cy="-12" r="2.7" fill="#7cd0ff"/>
+        <circle class="byte-mini" cx="5" cy="-12" r="2.7" fill="#7cd0ff"/>
+        <circle class="byte-mini m2" cx="-14" cy="-8" r="2.4" fill="#7cd0ff"/>
+        <circle class="byte-mini m2" cx="14" cy="-8" r="2.4" fill="#7cd0ff"/>
+        <circle class="byte-mini m3" cx="-23" cy="-3" r="2" fill="#7cd0ff"/>
+        <circle class="byte-mini m3" cx="23" cy="-3" r="2" fill="#7cd0ff"/>
+      </g>
+      <!-- 2 olhos grandes âmbar -->
+      <g class="byte-eyes">
+        <circle cx="-14" cy="11" r="11.5" fill="url(#hdeye)" stroke="#07061f" stroke-width="2.2"/>
+        <circle cx="14" cy="11" r="11.5" fill="url(#hdeye)" stroke="#07061f" stroke-width="2.2"/>
+        <ellipse cx="-12" cy="12.5" rx="5" ry="6.4" fill="#120800"/>
+        <ellipse cx="12" cy="12.5" rx="5" ry="6.4" fill="#120800"/>
+        <circle cx="-17" cy="8.5" r="2.6" fill="#fff"/>
+        <circle cx="9" cy="8.5" r="2.6" fill="#fff"/>
+        <circle cx="-9" cy="16" r="1.1" fill="#fff" opacity=".8"/>
+        <circle cx="15" cy="16" r="1.1" fill="#fff" opacity=".8"/>
+      </g>
+      <!-- pálpebras (expressão determinada) -->
+      <path d="M-28 2 Q-15 -1 -1 6 L-1 -2 L-28 -2 Z" fill="#23227a"/><path d="M-27 2 Q-15 -1 -1 6" stroke="#07061f" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M28 2 Q15 -1 1 6 L1 -2 L28 -2 Z" fill="#23227a"/><path d="M27 2 Q15 -1 1 6" stroke="#07061f" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <!-- presas -->
+      <path d="M-9 34 Q-11 45 -5 50 Q-6 42 -3 35 Z" fill="#eef0ff" stroke="#07061f" stroke-width="1.6"/>
+      <path d="M9 34 Q11 45 5 50 Q6 42 3 35 Z" fill="#eef0ff" stroke="#07061f" stroke-width="1.6"/>
+      <!-- cachecol de seda (rasgado) -->
+      <path fill="url(#hdsilk)" fill-opacity=".9" stroke="#5a6fc4" stroke-width="1.4" stroke-linejoin="round" d="M-30 14 C-52 4 -58 -26 -74 -44 C-82 -54 -96 -58 -108 -70 L-100 -56 L-112 -60 C-96 -40 -80 -34 -70 -18 C-60 -2 -46 14 -28 24 Z">
+        <animate attributeName="d" dur="1.6s" repeatCount="indefinite" values="M-30 14 C-52 4 -58 -26 -74 -44 C-82 -54 -96 -58 -108 -70 L-100 -56 L-112 -60 C-96 -40 -80 -34 -70 -18 C-60 -2 -46 14 -28 24 Z;M-30 14 C-56 8 -66 -18 -78 -36 C-88 -50 -104 -48 -118 -56 L-106 -46 L-118 -44 C-100 -30 -84 -30 -72 -14 C-62 0 -46 14 -28 24 Z;M-30 14 C-52 4 -58 -26 -74 -44 C-82 -54 -96 -58 -108 -70 L-100 -56 L-112 -60 C-96 -40 -80 -34 -70 -18 C-60 -2 -46 14 -28 24 Z"/>
+      </path>
+      <path d="M-37 18 Q0 36 37 18 L38 27 L33 32 L29 29 Q0 43 -14 39 L-18 44 L-23 38 Q-33 35 -38 28 Z" fill="url(#hdsilk)" stroke="#5a6fc4" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M-34 22 Q0 39 34 22" stroke="#eef3ff" stroke-width="1.2" fill="none" opacity=".8"/>
+      <path d="M-26 30 Q-4 40 20 33" stroke="#6f86d8" stroke-width="1" fill="none" opacity=".8"/>
+    </g>
+    </g>
+
+    <!-- balão de fala -->
+    <g class="bubble">
+      <path d="M482 22 H658 Q670 22 670 34 V54 Q670 66 658 66 H656 L674 86 L640 66 H482 Q470 66 470 54 V34 Q470 22 482 22 Z" fill="#eef5ff" stroke="#030712" stroke-width="2.5" stroke-linejoin="round"/>
+      <text x="570" y="50" class="t" font-size="14" text-anchor="middle" fill="#163066">Bem-vindo, viajante!</text>
+    </g>
+
+    <rect width="900" height="280" rx="18" fill="none" stroke="#1e3a6e" stroke-width="2"/>
+  </g>
+</svg>

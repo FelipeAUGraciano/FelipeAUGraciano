@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" width="900" height="330">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1426"/>
+      <stop offset="1" stop-color="#060a14"/>
+    </linearGradient>
+    <linearGradient id="hp" x1="0" x2="1"><stop offset="0" stop-color="#ff4d6d"/><stop offset="1" stop-color="#ff8fab"/></linearGradient>
+    <linearGradient id="mp" x1="0" x2="1"><stop offset="0" stop-color="#4361ee"/><stop offset="1" stop-color="#4cc9f0"/></linearGradient>
+    <linearGradient id="sp" x1="0" x2="1"><stop offset="0" stop-color="#f9c74f"/><stop offset="1" stop-color="#f9844a"/></linearGradient>
+    <linearGradient id="xp" x1="0" x2="1"><stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#3a86ff"/></linearGradient>
+    <style>
+      .t { font-family:'Courier New', Consolas, monospace; font-weight:700 }
+      .lbl { fill:#7f9cc9; font-size:14px }
+      .val { fill:#eef5ff; font-size:14px }
+      .head { fill:#00d4ff; font-size:15px }
+      .bar { animation: grow 2.2s cubic-bezier(.2,.8,.2,1) both; transform-box:fill-box; transform-origin:0 50% }
+      .b2{animation-delay:.25s} .b3{animation-delay:.5s} .b4{animation-delay:.75s}
+      @keyframes grow { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+      .cursor { animation: blink 1s steps(1) infinite }
+      @keyframes blink { 50%{opacity:0} }
+      .new { animation: shine 2s ease-in-out infinite }
+      @keyframes shine { 0%,100%{fill:#f9c74f} 50%{fill:#fff3b0} }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="898" height="328" rx="14" fill="url(#bg)" stroke="#3a86ff" stroke-width="2"/>
+  <rect x="8" y="8" width="884" height="314" rx="10" fill="none" stroke="#1e3a6e" stroke-width="1"/>
+
+  <!-- barra de título -->
+  <rect x="300" y="-1" width="300" height="34" rx="0" fill="#060a14"/>
+  <text x="450" y="24" class="t" font-size="18" text-anchor="middle" fill="#eef5ff">◆ JANELA DE STATUS ◆</text>
+
+  <!-- coluna 1: perfil -->
+  <g transform="translate(40,70)">
+    <text class="t head">» PERFIL</text>
+    <text y="30"  class="t lbl">Nome .....</text><text x="120" y="30"  class="t val">Felipe A. Graciano</text>
+    <text y="56"  class="t lbl">Classe ...</text><text x="120" y="56"  class="t val">Multiplataforma</text>
+    <text y="82"  class="t lbl">Nível ....</text><text x="120" y="82"  class="t val">17 (Tecelã)</text>
+    <text y="108" class="t lbl">Título ...</text><text x="120" y="108" class="t val">Tecnólogo em DSM</text>
+    <text y="134" class="t lbl">Guilda ...</text><text x="120" y="134" class="t val">Simova</text>
+    <text y="160" class="t lbl">Base .....</text><text x="120" y="160" class="t val">S. J. dos Campos</text>
+  </g>
+
+  <!-- coluna 2: barras -->
+  <g transform="translate(330,70)">
+    <text class="t head">» CONDIÇÃO</text>
+
+    <text y="32" class="t lbl">HP</text>
+    <rect x="40" y="20" width="200" height="14" rx="4" fill="#12203d"/>
+    <rect class="bar" x="40" y="20" width="184" height="14" rx="4" fill="url(#hp)"/>
+    <text x="250" y="32" class="t val" font-size="12">92/100</text>
+
+    <text y="62" class="t lbl">MP</text>
+    <rect x="40" y="50" width="200" height="14" rx="4" fill="#12203d"/>
+    <rect class="bar b2" x="40" y="50" width="130" height="14" rx="4" fill="url(#mp)"/>
+    <text x="250" y="62" class="t val" font-size="12">65/100</text>
+
+    <text y="92" class="t lbl">SP</text>
+    <rect x="40" y="80" width="200" height="14" rx="4" fill="#12203d"/>
+    <rect class="bar b3" x="40" y="80" width="200" height="14" rx="4" fill="url(#sp)"/>
+    <text x="250" y="92" class="t val" font-size="12">∞ 🧀</text>
+
+    <text y="122" class="t lbl">XP</text>
+    <rect x="40" y="110" width="200" height="14" rx="4" fill="#12203d"/>
+    <rect class="bar b4" x="40" y="110" width="136" height="14" rx="4" fill="url(#xp)"/>
+    <text x="250" y="122" class="t val" font-size="12">17/25</text>
+
+    <text y="160" class="t lbl" font-size="12">SP = energia (pão de queijo)</text>
+  </g>
+
+  <!-- coluna 3: atributos -->
+  <g transform="translate(660,70)">
+    <text class="t head">» ATRIBUTOS</text>
+    <text y="30"  class="t lbl">REPOS ....</text><text x="150" y="30"  class="t val">17</text>
+    <text y="56"  class="t lbl">SEGUIDORES</text><text x="150" y="56"  class="t val">16</text>
+    <text y="82"  class="t lbl">ESTRELAS .</text><text x="150" y="82"  class="t val">1</text>
+    <text y="108" class="t lbl">CONQUISTAS</text><text x="150" y="108" class="t val">3</text>
+    <text y="134" class="t lbl">SORTE ....</text><text x="150" y="134" class="t val">??</text>
+  </g>
+
+  <!-- linha divisória -->
+  <line x1="40" y1="252" x2="860" y2="252" stroke="#1e3a6e" stroke-dasharray="4 6"/>
+
+  <!-- habilidades -->
+  <g transform="translate(40,282)">
+    <text class="t head">» HABILIDADES:</text>
+    <text x="150" class="t val" font-size="13">[Python]  [JavaScript]  [GDScript]  [Trabalho em Equipe]  [Pão de Queijo Lv.MAX]</text>
+    <text x="150" y="24" class="t new" font-size="13">▲ Conquista desbloqueada: [Pull Shark x2]<tspan class="cursor"> _</tspan></text>
+  </g>
+</svg>
