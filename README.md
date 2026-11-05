@@ -122,7 +122,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/FelipeAUGraciano/FelipeAUGraciano/output/teia-da-byte.svg" width="100%" alt="A Byte tecendo fios até cada contribuição do último ano"/>
+<img src="https://raw.githubusercontent.com/FelipeAUGraciano/FelipeAUGraciano/output/teia-da-byte.svg?v=2" width="100%" alt="A Byte tecendo fios até cada contribuição do último ano"/>
 
 <sub>Cada contribuição vira uma gota de orvalho na teia. Faça commits para a Byte ter onde tecer! 🕷️</sub>
 
