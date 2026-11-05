@@ -51,10 +51,22 @@ jobs:
             dist/byte-hunt.svg?palette=github-light&color_snake=#3a86ff
             dist/byte-hunt-dark.svg?palette=github-dark&color_snake=#00d4ff&color_dots=#0d1626,#163066,#2f5fb3,#3a86ff,#7fb8ff
 
+      # Publica a pasta dist numa branch própria (output). Tenta até 3 vezes,
+      # porque o GitHub às vezes recusa um push por instabilidade momentânea.
       - name: Publicar na branch output
-        uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          rm -rf /tmp/pub && cp -r dist /tmp/pub && cd /tmp/pub
+          git init -q -b output
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Atualiza Byte e estatísticas"
+          for tentativa in 1 2 3; do
+            if git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output; then
+              echo "Publicado na tentativa $tentativa"; exit 0
+            fi
+            echo "Push recusado, tentando de novo em 20s..."; sleep 20
+          done
+          exit 1
