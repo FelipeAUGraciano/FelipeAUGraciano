@@ -35,7 +35,7 @@
     <text class="t head">» PERFIL</text>
     <text y="30"  class="t lbl">Nome .....</text><text x="120" y="30"  class="t val">Felipe A. Graciano</text>
     <text y="56"  class="t lbl">Classe ...</text><text x="120" y="56"  class="t val">Multiplataforma</text>
-    <text y="82"  class="t lbl">Nível ....</text><text x="120" y="82"  class="t val">17 (Tecelã)</text>
+    <text y="82"  class="t lbl">Nível ....</text><text x="120" y="82"  class="t val">18 (Tecelã)</text>
     <text y="108" class="t lbl">Título ...</text><text x="120" y="108" class="t val">Tecnólogo em DSM</text>
     <text y="134" class="t lbl">Guilda ...</text><text x="120" y="134" class="t val">Simova</text>
     <text y="160" class="t lbl">Base .....</text><text x="120" y="160" class="t val">S. J. dos Campos</text>
@@ -62,8 +62,8 @@
 
     <text y="122" class="t lbl">XP</text>
     <rect x="40" y="110" width="200" height="14" rx="4" fill="#12203d"/>
-    <rect class="bar b4" x="40" y="110" width="136" height="14" rx="4" fill="url(#xp)"/>
-    <text x="250" y="122" class="t val" font-size="12">17/25</text>
+    <rect class="bar b4" x="40" y="110" width="144" height="14" rx="4" fill="url(#xp)"/>
+    <text x="250" y="122" class="t val" font-size="12">18/25</text>
 
     <text y="160" class="t lbl" font-size="12">SP = energia (pão de queijo)</text>
   </g>
@@ -71,7 +71,7 @@
   <!-- coluna 3: atributos -->
   <g transform="translate(660,70)">
     <text class="t head">» ATRIBUTOS</text>
-    <text y="30"  class="t lbl">REPOS ....</text><text x="150" y="30"  class="t val">17</text>
+    <text y="30"  class="t lbl">REPOS ....</text><text x="150" y="30"  class="t val">18</text>
     <text y="56"  class="t lbl">SEGUIDORES</text><text x="150" y="56"  class="t val">16</text>
     <text y="82"  class="t lbl">ESTRELAS .</text><text x="150" y="82"  class="t val">1</text>
     <text y="108" class="t lbl">CONQUISTAS</text><text x="150" y="108" class="t val">3</text>

@@ -1,6 +1,7 @@
-# Gera a animação da Byte "caçando" o seu gráfico de contribuições.
+# Gera a animação da Byte "caçando" o seu gráfico de contribuições
+# e os cards de estatística (sem depender de servidor externo).
 # Roda todo dia e também pode ser disparado manualmente na aba Actions.
-name: Byte caçando commits
+name: Byte caçando commits + estatísticas
 
 on:
   schedule:
@@ -24,6 +25,22 @@ jobs:
           outputs: |
             dist/byte-hunt.svg?palette=github-light&color_snake=#3a86ff
             dist/byte-hunt-dark.svg?palette=github-dark&color_snake=#00d4ff&color_dots=#0d1626,#163066,#2f5fb3,#3a86ff,#7fb8ff
+
+      - name: Card de atributos
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          path: dist/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          options: username=${{ github.repository_owner }}&show_icons=true&locale=pt-br&hide_border=true&bg_color=060A14&title_color=00D4FF&text_color=EEF5FF&icon_color=3A86FF&ring_color=3A86FF&custom_title=Atributos de Batalha
+
+      - name: Card de linguagens
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          path: dist/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          options: username=${{ github.repository_owner }}&layout=compact&langs_count=6&locale=pt-br&hide_border=true&bg_color=060A14&title_color=00D4FF&text_color=EEF5FF&custom_title=Magias mais usadas
 
       - name: Publicar na branch output
         uses: crazy-max/ghaction-github-pages@v4

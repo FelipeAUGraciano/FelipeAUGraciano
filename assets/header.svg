@@ -85,7 +85,7 @@
       @keyframes pop { 0%,8%{opacity:0; transform:scale(.6)} 14%,80%{opacity:1; transform:scale(1)} 88%,100%{opacity:0; transform:scale(.6)} }
 
       .xp { animation: fill 3.5s ease-out forwards }
-      @keyframes fill { from{width:0} to{width:197px} }
+      @keyframes fill { from{width:0} to{width:209px} }
 
 
       .byte-breath { animation: bytebreath 2.6s ease-in-out infinite }
@@ -128,13 +128,13 @@
 
     <!-- título -->
     <text x="50" y="98" class="t" font-size="46" fill="url(#title)">FELIPE GRACIANO</text>
-    <text x="52" y="132" class="t" font-size="16" fill="#a9c6f5">Lv. 17 · Classe: Dev Multiplataforma · Guilda: Simova</text>
+    <text x="52" y="132" class="t" font-size="16" fill="#a9c6f5">Lv. 18 · Classe: Dev Multiplataforma · Guilda: Simova</text>
 
     <!-- barra de XP -->
     <text x="52" y="170" class="t" font-size="13" fill="#00d4ff">XP</text>
     <rect x="80" y="159" width="290" height="14" rx="7" fill="#12203d" stroke="#24477f"/>
-    <rect class="xp" x="80" y="159" width="197" height="14" rx="7" fill="url(#title)"/>
-    <text x="382" y="171" class="t" font-size="12" fill="#7f9cc9">17 / 25 repos</text>
+    <rect class="xp" x="80" y="159" width="209" height="14" rx="7" fill="url(#title)"/>
+    <text x="382" y="171" class="t" font-size="12" fill="#7f9cc9">18 / 25 repos</text>
 
     <text x="52" y="215" class="t" font-size="13" fill="#5f7ba6">▶ São José dos Campos - SP · Pressione [scroll]</text>
 

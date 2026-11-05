@@ -1,7 +1,7 @@
 
 <div align="center">
 
-<img src="./assets/header.svg" width="100%" alt="Felipe Graciano · Lv. 17 Dev Multiplataforma"/>
+<img src="./assets/header.svg" width="100%" alt="Felipe Graciano · Lv. 18 Dev Multiplataforma"/>
 
 <a href="https://github.com/FelipeAUGraciano">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&pause=1200&color=00D4FF&center=true&vCenter=true&width=700&lines=%3E+Felipe+Augusto+Graciano+entrou+no+jogo;%3E+Tecn%C3%B3logo+em+DSM+%F0%9F%8E%93;%3E+Guilda+atual%3A+Simova;%3E+Criando+a+Cavaleira+de+Seda+em+Godot+%F0%9F%95%B7%EF%B8%8F;%3E+Movido+a+p%C3%A3o+de+queijo+%F0%9F%A7%80" alt="Typing SVG"/>
@@ -85,7 +85,7 @@
 | ✅ | Formar-se Tecnólogo em DSM | `🎓 Título: Tecnólogo` |
 | ✅ | Entrar para uma guilda de devs | `🏢 Simova` |
 | ✅ | Chegar a 10 repositórios | `🕸️ Evolução: Tecelã` |
-| ⏳ | Chegar a 25 repositórios (17/25) | `🧬 Evolução: Arquiteta` |
+| ⏳ | Chegar a 25 repositórios (18/25) | `🧬 Evolução: Arquiteta` |
 | ⏳ | Lançar a Cavaleira de Seda | `🎮 Título: Game Dev` |
 | ⏳ | Conquistar 10 estrelas (1/10) | `⭐ +500 XP` |
 
@@ -98,7 +98,7 @@
 ![](https://img.shields.io/badge/🦈_Pull_Shark-x2-3a86ff?style=flat-square&labelColor=060a14)
 ![](https://img.shields.io/badge/⚡_Quickdraw-Fechou_uma_issue_em_minutos-00d4ff?style=flat-square&labelColor=060a14)
 ![](https://img.shields.io/badge/🤝_Pair_Extraordinaire-Commits_em_dupla-7fb8ff?style=flat-square&labelColor=060a14)
-![](https://img.shields.io/badge/🕸️_Tecelã-17_repositórios-a9c6f5?style=flat-square&labelColor=060a14)
+![](https://img.shields.io/badge/🕸️_Tecelã-18_repositórios-a9c6f5?style=flat-square&labelColor=060a14)
 ![](https://img.shields.io/badge/🧀_Pão_de_Queijo-Lv._MAX-f9c74f?style=flat-square&labelColor=060a14)
 
 </div>
@@ -109,8 +109,8 @@
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=FelipeAUGraciano&show_icons=true&locale=pt-br&hide_border=true&count_private=true&bg_color=060A14&title_color=00D4FF&text_color=EEF5FF&icon_color=3A86FF&custom_title=Atributos%20de%20Batalha" alt="Estatísticas"/>
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=FelipeAUGraciano&layout=compact&locale=pt-br&hide_border=true&bg_color=060A14&title_color=00D4FF&text_color=EEF5FF&custom_title=Magias%20mais%20usadas" alt="Linguagens"/>
+<img height="165" src="https://raw.githubusercontent.com/FelipeAUGraciano/FelipeAUGraciano/output/stats.svg" alt="Estatísticas"/>
+<img height="165" src="https://raw.githubusercontent.com/FelipeAUGraciano/FelipeAUGraciano/output/top-langs.svg" alt="Linguagens"/>
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=FelipeAUGraciano&locale=pt_BR&hide_border=true&background=060A14&ring=3A86FF&fire=7FB8FF&currStreakNum=EEF5FF&sideNums=EEF5FF&currStreakLabel=00D4FF&sideLabels=7F9CC9&dates=7F9CC9&stroke=1E3A6E" alt="Sequência de dias"/>
 
