@@ -1,0 +1,321 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 324" width="880" height="324">
+  <defs>
+    
+    <radialGradient id="tbabd" cx="0.36" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#4146b8"/><stop offset="0.5" stop-color="#22217a"/><stop offset="1" stop-color="#0d0c38"/>
+    </radialGradient>
+    <radialGradient id="tbhead" cx="0.4" cy="0.25" r="0.85">
+      <stop offset="0" stop-color="#3a3ca6"/><stop offset="0.65" stop-color="#1f1e6b"/><stop offset="1" stop-color="#0f0e3d"/>
+    </radialGradient>
+    <linearGradient id="tbleg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2e2d86"/><stop offset="1" stop-color="#14134a"/>
+    </linearGradient>
+    <linearGradient id="tbmoon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef0ff"/><stop offset="0.45" stop-color="#a9b0ec"/><stop offset="0.75" stop-color="#c9b9ff"/><stop offset="1" stop-color="#7a82d0"/>
+    </linearGradient>
+    <linearGradient id="tbsilk" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9d6ff"/><stop offset="0.5" stop-color="#9fb4f0"/><stop offset="1" stop-color="#6f86d8"/>
+    </linearGradient>
+    <linearGradient id="tbcrysL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2f6ff"/><stop offset="1" stop-color="#7cc8ff"/>
+    </linearGradient>
+    <linearGradient id="tbcrysR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7cc8ff"/><stop offset="1" stop-color="#2f6fe0"/>
+    </linearGradient>
+    <radialGradient id="tbeye" cx="0.42" cy="0.38" r="0.7">
+      <stop offset="0" stop-color="#ffd877"/><stop offset="0.55" stop-color="#f5a623"/><stop offset="1" stop-color="#b8640a"/>
+    </radialGradient>
+    <radialGradient id="tbruneglow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#5fb8ff" stop-opacity=".55"/><stop offset="1" stop-color="#5fb8ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="tbglow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="tglow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3.2"/></filter>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#3a86ff" stop-opacity=".18"/><stop offset="1" stop-color="#3a86ff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="drop1" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#2f5fb3"/><stop offset="1" stop-color="#2f5fb3"/></radialGradient><radialGradient id="drop2" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#3a86ff"/><stop offset="1" stop-color="#2f5fb3"/></radialGradient><radialGradient id="drop3" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#7fb8ff"/><stop offset="1" stop-color="#3a86ff"/></radialGradient><radialGradient id="drop4" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#00d4ff"/><stop offset="1" stop-color="#7fb8ff"/></radialGradient>
+    <clipPath id="card"><rect width="880" height="324" rx="6"/></clipPath>
+    <style>
+      .t { font-family:'Segoe UI', Ubuntu, sans-serif }
+      .h { font-family:'Segoe UI', Ubuntu, sans-serif; font-weight:600; font-size:22px; fill:#00D4FF }
+      .big { font-family:'Segoe UI', Ubuntu, sans-serif; font-weight:700; font-size:22px; fill:#EEF5FF }
+      .s { font-family:'Segoe UI', Ubuntu, sans-serif; font-size:13px; fill:#7f9cc9 }
+      .m { font-family:'Segoe UI', Ubuntu, sans-serif; font-size:10px; fill:#5f7ba6 }
+
+      .byte-breath { animation: bytebreath 2.6s ease-in-out infinite }
+      @keyframes bytebreath { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+      .byte-eyes { transform-box:fill-box; transform-origin:50% 50%; animation: byteblink 4.5s infinite }
+      @keyframes byteblink { 0%,93%,100%{transform:scaleY(1)} 96%{transform:scaleY(.1)} }
+      .byte-rune { animation: byterune 2.4s ease-in-out infinite }
+      @keyframes byterune { 0%,100%{opacity:.7} 50%{opacity:1} }
+      .byte-mini { animation: bytemini 1.8s ease-in-out infinite }
+      .byte-mini.m2{animation-delay:.3s} .byte-mini.m3{animation-delay:.6s}
+      @keyframes bytemini { 0%,100%{opacity:.65} 50%{opacity:1} }
+      .byte-blade { animation: byteglint 2s ease-in-out infinite }
+      @keyframes byteglint { 0%,100%{filter:brightness(1)} 50%{filter:brightness(1.35)} }
+
+    </style>
+  </defs>
+  <g clip-path="url(#card)">
+  <rect width="880" height="324" fill="#060A14"/>
+  <circle cx="250" cy="162" r="154" fill="url(#halo)"/>
+
+  <!-- teia (balança devagar com o vento) -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" dur="9s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" keyTimes="0;.5;1"
+      values="-1.4 250 162;1.4 250 162;-1.4 250 162"/>
+    <g fill="none" stroke-linecap="round">
+      <path d="M151.2 71.5 L0 0 M352.5 75.7 L480 0 M348.0 253.3 L460 324 M160.7 261.9 L0 324 M116.0 162.2 L0 152" stroke="#7fb8ff" stroke-opacity=".22" stroke-width="1"/>
+      <path d="M267.9 163.6 L383.5 173.9 M267.1 167.8 L376.9 204.9 M265.0 172.0 L361.5 236.4 M261.9 175.5 L338.3 262.8 M258.1 178.1 L310.2 281.7 M253.8 179.6 L278.2 293.0 M249.1 180.0 L243.2 295.8 M244.5 179.1 L208.7 289.5 M240.3 177.2 L178.0 275.0 M236.8 174.3 L151.9 253.3 M234.1 170.4 L131.6 224.7 M232.5 166.0 L119.4 191.8 M232.0 161.3 L116.1 156.9 M232.8 156.7 L122.0 122.3 M234.7 152.5 L136.1 91.4 M237.6 149.0 L157.5 65.1 M241.4 146.2 L185.8 44.4 M245.8 144.5 L218.5 31.7 M247.9 144.1 L234.2 28.9 M250.0 144.0 L250.0 28.0 M253.3 144.3 L274.8 30.3 M256.6 145.2 L298.8 37.2 M260.7 147.5 L329.5 54.1 M264.1 150.8 L354.8 78.5 M266.5 154.8 L372.9 108.5 M267.8 159.3 L382.5 142.2 M295.8 166.1 Q290.5 170.5 293.6 176.7 M293.6 176.7 Q287.1 180.3 288.3 187.5 M288.3 187.5 Q281.1 189.3 280.3 196.6 M280.3 196.6 Q273.1 196.3 270.7 203.1 M270.7 203.1 Q263.8 201.0 259.7 207.0 M259.7 207.0 Q253.3 203.3 247.7 207.9 M247.7 207.9 Q242.5 202.7 235.8 205.8 M235.8 205.8 Q232.4 199.5 225.3 200.8 M225.3 200.8 Q223.5 193.8 216.3 193.3 M216.3 193.3 Q216.3 186.0 209.3 183.5 M209.3 183.5 Q211.2 176.4 205.2 172.2 M205.2 172.2 Q208.8 165.9 204.0 160.2 M204.0 160.2 Q209.2 155.0 206.1 148.4 M206.1 148.4 Q212.3 144.8 210.9 137.8 M210.9 137.8 Q217.9 135.9 218.2 128.7 M218.2 128.7 Q225.6 128.6 228.0 121.6 M228.0 121.6 Q235.1 123.4 239.2 117.3 M239.2 117.3 Q242.7 121.3 244.6 116.3 M244.6 116.3 Q247.5 120.7 250.0 116.0 M250.0 116.0 Q253.9 120.8 258.5 116.8 M258.5 116.8 Q261.4 122.2 266.7 119.2 M266.7 119.2 Q270.0 125.7 277.3 125.0 M277.3 125.0 Q278.7 132.2 286.0 133.3 M286.0 133.3 Q285.5 140.6 292.2 143.6 M292.2 143.6 Q289.8 150.6 295.5 155.2 M295.5 155.2 Q291.4 160.8 295.8 166.1 M308.8 167.2 Q302.0 172.9 305.9 180.9 M305.9 180.9 Q297.6 185.4 299.1 194.8 M299.1 194.8 Q289.9 197.0 288.9 206.4 M288.9 206.4 Q279.7 206.0 276.5 214.7 M276.5 214.7 Q267.6 212.1 262.4 219.7 M262.4 219.7 Q254.3 214.9 247.0 220.9 M247.0 220.9 Q240.4 214.2 231.8 218.1 M231.8 218.1 Q227.4 210.0 218.3 211.8 M218.3 211.8 Q216.0 202.8 206.8 202.2 M206.8 202.2 Q206.7 192.8 197.9 189.6 M197.9 189.6 Q200.2 180.5 192.5 175.1 M192.5 175.1 Q197.1 166.9 191.0 159.8 M191.0 159.8 Q197.7 153.1 193.6 144.5 M193.6 144.5 Q201.7 140.0 199.8 130.9 M199.8 130.9 Q208.8 128.5 209.3 119.3 M209.3 119.3 Q218.7 119.1 221.7 110.2 M221.7 110.2 Q230.9 112.5 236.1 104.7 M236.1 104.7 Q240.6 109.7 243.0 103.4 M243.0 103.4 Q246.9 109.0 250.0 103.0 M250.0 103.0 Q254.9 109.1 260.9 104.0 M260.9 104.0 Q264.6 111.0 271.5 107.0 M271.5 107.0 Q275.6 115.5 285.0 114.5 M285.0 114.5 Q286.8 123.7 296.1 125.2 M296.1 125.2 Q295.5 134.6 304.1 138.4 M304.1 138.4 Q301.0 147.4 308.4 153.3 M308.4 153.3 Q303.1 160.4 308.8 167.2 M321.7 168.4 Q313.4 175.3 318.2 185.1 M318.2 185.1 Q308.1 190.6 309.9 202.0 M309.9 202.0 Q298.7 204.7 297.5 216.1 M297.5 216.1 Q286.2 215.7 282.3 226.3 M282.3 226.3 Q271.5 223.1 265.1 232.4 M265.1 232.4 Q255.2 226.6 246.3 233.9 M246.3 233.9 Q238.3 225.7 227.8 230.5 M227.8 230.5 Q222.4 220.6 211.3 222.7 M211.3 222.7 Q208.5 211.8 197.3 211.0 M197.3 211.0 Q197.2 199.6 186.4 195.7 M186.4 195.7 Q189.3 184.6 179.8 178.0 M179.8 178.0 Q185.5 168.0 178.1 159.3 M178.1 159.3 Q186.1 151.1 181.2 140.7 M181.2 140.7 Q191.0 135.1 188.8 124.1 M188.8 124.1 Q199.7 121.2 200.3 109.9 M200.3 109.9 Q211.8 109.7 215.5 98.8 M215.5 98.8 Q226.7 101.5 233.1 92.0 M233.1 92.0 Q238.5 98.2 241.5 90.5 M241.5 90.5 Q246.2 97.3 250.0 90.0 M250.0 90.0 Q256.0 97.5 263.3 91.2 M263.3 91.2 Q267.9 99.7 276.2 94.9 M276.2 94.9 Q281.3 105.3 292.7 104.0 M292.7 104.0 Q294.9 115.3 306.3 117.1 M306.3 117.1 Q305.5 128.6 316.0 133.3 M316.0 133.3 Q312.3 144.1 321.2 151.4 M321.2 151.4 Q314.8 160.1 321.7 168.4 M334.7 169.5 Q324.9 177.8 330.5 189.2 M330.5 189.2 Q318.6 195.8 320.7 209.2 M320.7 209.2 Q307.5 212.4 306.0 225.9 M306.0 225.9 Q292.7 225.4 288.2 237.9 M288.2 237.9 Q275.4 234.2 267.9 245.1 M267.9 245.1 Q256.1 238.3 245.7 246.9 M245.7 246.9 Q236.1 237.2 223.8 242.9 M223.8 242.9 Q217.4 231.2 204.3 233.7 M204.3 233.7 Q201.0 220.8 187.8 219.9 M187.8 219.9 Q187.7 206.3 174.9 201.8 M174.9 201.8 Q178.3 188.6 167.1 180.9 M167.1 180.9 Q173.8 169.1 165.1 158.8 M165.1 158.8 Q174.6 149.1 168.8 136.8 M168.8 136.8 Q180.4 130.3 177.7 117.2 M177.7 117.2 Q190.6 113.8 191.3 100.5 M191.3 100.5 Q204.9 100.2 209.3 87.4 M209.3 87.4 Q222.5 90.6 230.0 79.4 M230.0 79.4 Q236.5 86.7 239.9 77.6 M239.9 77.6 Q245.5 85.6 250.0 77.0 M250.0 77.0 Q257.1 85.8 265.7 78.5 M265.7 78.5 Q271.1 88.5 280.9 82.8 M280.9 82.8 Q286.9 95.0 300.4 93.6 M300.4 93.6 Q303.1 106.9 316.5 109.0 M316.5 109.0 Q315.5 122.5 327.9 128.1 M327.9 128.1 Q323.5 140.9 334.1 149.5 M334.1 149.5 Q326.5 159.7 334.7 169.5 M347.6 170.7 Q336.3 180.2 342.8 193.4 M342.8 193.4 Q329.1 200.9 331.5 216.4 M331.5 216.4 Q316.3 220.1 314.6 235.7 M314.6 235.7 Q299.3 235.2 294.0 249.6 M294.0 249.6 Q279.3 245.2 270.6 257.8 M270.6 257.8 Q257.1 249.9 245.0 259.9 M245.0 259.9 Q234.0 248.7 219.8 255.2 M219.8 255.2 Q212.4 241.8 197.3 244.6 M197.3 244.6 Q193.6 229.8 178.3 228.8 M178.3 228.8 Q178.1 213.1 163.4 207.9 M163.4 207.9 Q167.3 192.7 154.5 183.8 M154.5 183.8 Q162.2 170.2 152.1 158.3 M152.1 158.3 Q163.1 147.1 156.4 133.0 M156.4 133.0 Q169.7 125.4 166.7 110.4 M166.7 110.4 Q181.5 106.4 182.3 91.1 M182.3 91.1 Q198.0 90.8 203.1 76.0 M203.1 76.0 Q218.2 79.7 227.0 66.7 M227.0 66.7 Q234.4 75.2 238.4 64.7 M238.4 64.7 Q244.8 74.0 250.0 64.0 M250.0 64.0 Q258.2 74.2 268.2 65.7 M268.2 65.7 Q274.3 77.2 285.7 70.7 M285.7 70.7 Q292.6 84.8 308.1 83.1 M308.1 83.1 Q311.2 98.5 326.6 100.9 M326.6 100.9 Q325.6 116.5 339.9 122.9 M339.9 122.9 Q334.8 137.7 346.9 147.5 M346.9 147.5 Q338.2 159.4 347.6 170.7 M360.6 171.9 Q347.8 182.6 355.2 197.5 M355.2 197.5 Q339.6 206.1 342.3 223.6 M342.3 223.6 Q325.1 227.9 323.2 245.5 M323.2 245.5 Q305.8 244.9 299.8 261.2 M299.8 261.2 Q283.2 256.2 273.3 270.5 M273.3 270.5 Q258.0 261.6 244.4 272.9 M244.4 272.9 Q231.9 260.2 215.8 267.6 M215.8 267.6 Q207.4 252.4 190.3 255.6 M190.3 255.6 Q186.1 238.8 168.7 237.6 M168.7 237.6 Q168.6 219.9 151.9 213.9 M151.9 213.9 Q156.4 196.8 141.8 186.7 M141.8 186.7 Q150.5 171.3 139.1 157.8 M139.1 157.8 Q151.5 145.2 144.0 129.1 M144.0 129.1 Q159.1 120.6 155.6 103.5 M155.6 103.5 Q172.4 99.1 173.4 81.7 M173.4 81.7 Q191.1 81.3 196.8 64.6 M196.8 64.6 Q214.0 68.8 223.9 54.1 M223.9 54.1 Q232.3 63.7 236.9 51.8 M236.9 51.8 Q244.1 62.3 250.0 51.0 M250.0 51.0 Q259.3 62.5 270.6 52.9 M270.6 52.9 Q277.6 66.0 290.4 58.6 M290.4 58.6 Q298.2 74.5 315.9 72.6 M315.9 72.6 Q319.3 90.0 336.8 92.8 M336.8 92.8 Q335.6 110.5 351.8 117.7 M351.8 117.7 Q346.0 134.4 359.8 145.6 M359.8 145.6 Q349.9 159.0 360.6 171.9 M373.5 173.0 Q359.2 185.0 367.5 201.7 M367.5 201.7 Q350.1 211.3 353.1 230.8 M353.1 230.8 Q333.9 235.6 331.7 255.2 M331.7 255.2 Q312.3 254.6 305.7 272.8 M305.7 272.8 Q287.1 267.3 276.1 283.2 M276.1 283.2 Q259.0 273.2 243.7 285.8 M243.7 285.8 Q229.8 271.8 211.8 280.0 M211.8 280.0 Q202.4 263.0 183.4 266.6 M183.4 266.6 Q178.6 247.8 159.2 246.5 M159.2 246.5 Q159.1 226.7 140.4 220.0 M140.4 220.0 Q145.4 200.9 129.1 189.6 M129.1 189.6 Q138.9 172.4 126.1 157.3 M126.1 157.3 Q140.0 143.2 131.6 125.3 M131.6 125.3 Q148.4 115.7 144.6 96.7 M144.6 96.7 Q163.3 91.7 164.4 72.3 M164.4 72.3 Q184.2 71.9 190.6 53.2 M190.6 53.2 Q209.8 57.9 220.9 41.5 M220.9 41.5 Q230.3 52.2 235.3 38.9 M235.3 38.9 Q243.4 50.6 250.0 38.0 M250.0 38.0 Q260.4 50.9 273.0 40.1 M273.0 40.1 Q280.8 54.7 295.1 46.5 M295.1 46.5 Q303.9 64.3 323.6 62.2 M323.6 62.2 Q327.4 81.6 346.9 84.7 M346.9 84.7 Q345.6 104.4 363.7 112.5 M363.7 112.5 Q357.3 131.2 372.6 143.7 M372.6 143.7 Q361.6 158.7 373.5 173.0" stroke="#7fb8ff" stroke-opacity=".2" stroke-width=".9"/>
+      <path d="M269.9 163.8 L268.9 168.4 L266.6 173.1 L263.2 177.0 L259.0 179.9 L254.2 181.6 L249.0 182.0 L243.8 181.0 L239.3 178.9 L235.4 175.6 L232.3 171.4 L230.5 166.5 L230.0 161.2 L230.9 156.1 L233.0 151.5 L236.2 147.5 L240.4 144.4 L245.3 142.6 L247.6 142.1 L250.0 142.0 L253.7 142.3 L257.3 143.4 L261.9 145.9 L265.6 149.5 L268.3 154.0 L269.8 159.0 Z M277.9 164.5 L276.5 171.0 L273.3 177.5 L268.5 183.1 L262.6 187.0 L255.9 189.4 L248.6 190.0 L241.4 188.6 L235.0 185.6 L229.5 181.1 L225.3 175.1 L222.7 168.2 L222.0 160.9 L223.3 153.7 L226.2 147.3 L230.7 141.7 L236.6 137.4 L243.4 134.8 L246.7 134.2 L250.0 134.0 L255.2 134.5 L260.2 135.9 L266.6 139.5 L271.9 144.5 L275.7 150.8 L277.7 157.9 Z M285.9 165.2 L284.1 173.5 L279.9 182.0 L273.7 189.1 L266.2 194.2 L257.6 197.2 L248.2 198.0 L238.9 196.2 L230.7 192.4 L223.6 186.5 L218.2 178.8 L214.9 170.0 L214.0 160.6 L215.6 151.3 L219.4 143.0 L225.1 136.0 L232.8 130.4 L241.5 127.0 L245.7 126.3 L250.0 126.0 L256.7 126.6 L263.1 128.5 L271.4 133.0 L278.1 139.6 L283.0 147.6 L285.6 156.7 Z" stroke="#7fb8ff" stroke-opacity=".3" stroke-width=".9"/>
+    </g>
+    <text x="277.0" y="22.0" class="m" text-anchor="middle">nov</text><text x="336.6" y="48.0" class="m" text-anchor="middle">dez</text><text x="383.9" y="107.2" class="m" text-anchor="middle">jan</text><text x="395.4" y="178.5" class="m" text-anchor="middle">fev</text><text x="371.4" y="246.5" class="m" text-anchor="middle">mar</text><text x="315.6" y="295.9" class="m" text-anchor="middle">abr</text><text x="242.6" y="311.3" class="m" text-anchor="middle">mai</text><text x="171.5" y="288.6" class="m" text-anchor="middle">jun</text><text x="121.0" y="233.8" class="m" text-anchor="middle">jul</text><text x="104.1" y="159.9" class="m" text-anchor="middle">ago</text><text x="125.9" y="88.6" class="m" text-anchor="middle">set</text><text x="180.1" y="37.3" class="m" text-anchor="middle">out</text><text x="232.7" y="20.5" class="m" text-anchor="middle">nov</text>
+
+    <!-- onda de vibração saindo do centro -->
+    <circle cx="250" cy="162" r="22" fill="none" stroke="#7fb8ff" stroke-width="2" opacity="0">
+      <animate attributeName="r" dur="4.0s" repeatCount="indefinite" values="22;138" keyTimes="0;.55" calcMode="spline" keySplines=".2 .6 .4 1"/>
+      <animate attributeName="opacity" dur="4.0s" repeatCount="indefinite" values=".55;0;0" keyTimes="0;.55;1"/>
+      <animate attributeName="stroke-width" dur="4.0s" repeatCount="indefinite" values="3;.5;.5" keyTimes="0;.55;1"/>
+    </circle>
+
+    <!-- gotas de orvalho = contribuições -->
+    
+    <g>
+      <circle cx="338.1" cy="120.9" r="8.3" fill="#2f5fb3" opacity="0" filter="url(#tglow)">
+        <animate attributeName="opacity" dur="4.0s" begin="1.48s" repeatCount="indefinite" values="0;.85;0" keyTimes="0;.12;.5"/>
+      </circle>
+      <circle cx="338.1" cy="120.9" r="3.3" fill="url(#drop1)">
+        <animate attributeName="opacity" dur="3s" begin="0.79s" repeatCount="indefinite" values=".75;1;.75"/>
+      </circle>
+      <circle cx="337.0" cy="119.8" r="1.0" fill="#fff" opacity=".85"/>
+      <title>2026-01-15: 2 contribuições</title>
+    </g>
+    <g>
+      <circle cx="343.2" cy="143.2" r="8.3" fill="#2f5fb3" opacity="0" filter="url(#tglow)">
+        <animate attributeName="opacity" dur="4.0s" begin="1.44s" repeatCount="indefinite" values="0;.85;0" keyTimes="0;.12;.5"/>
+      </circle>
+      <circle cx="343.2" cy="143.2" r="3.3" fill="url(#drop1)">
+        <animate attributeName="opacity" dur="3s" begin="2.97s" repeatCount="indefinite" values=".75;1;.75"/>
+      </circle>
+      <circle cx="342.1" cy="142.0" r="1.0" fill="#fff" opacity=".85"/>
+      <title>2026-01-29: 2 contribuições</title>
+    </g>
+    <g>
+      <circle cx="252.3" cy="216.7" r="9.7" fill="#7fb8ff" opacity="0" filter="url(#tglow)">
+        <animate attributeName="opacity" dur="4.0s" begin="0.64s" repeatCount="indefinite" values="0;.85;0" keyTimes="0;.12;.5"/>
+      </circle>
+      <circle cx="252.3" cy="216.7" r="4.7" fill="url(#drop3)">
+        <animate attributeName="opacity" dur="3s" begin="1.71s" repeatCount="indefinite" values=".75;1;.75"/>
+      </circle>
+      <circle cx="250.7" cy="215.0" r="1.4" fill="#fff" opacity=".85"/>
+      <title>2026-05-11: 6 contribuições</title>
+    </g>
+    <g>
+      <circle cx="191.6" cy="52.8" r="8.3" fill="#2f5fb3" opacity="0" filter="url(#tglow)">
+        <animate attributeName="opacity" dur="4.0s" begin="2.00s" repeatCount="indefinite" values="0;.85;0" keyTimes="0;.12;.5"/>
+      </circle>
+      <circle cx="191.6" cy="52.8" r="3.3" fill="url(#drop1)">
+        <animate attributeName="opacity" dur="3s" begin="0.54s" repeatCount="indefinite" values=".75;1;.75"/>
+      </circle>
+      <circle cx="190.4" cy="51.6" r="1.0" fill="#fff" opacity=".85"/>
+      <title>2026-10-17: 2 contribuições</title>
+    </g>
+    <g>
+      <circle cx="234.9" cy="73.7" r="10.4" fill="#00d4ff" opacity="0" filter="url(#tglow)">
+        <animate attributeName="opacity" dur="4.0s" begin="1.33s" repeatCount="indefinite" values="0;.85;0" keyTimes="0;.12;.5"/>
+      </circle>
+      <circle cx="234.9" cy="73.7" r="5.4" fill="url(#drop4)">
+        <animate attributeName="opacity" dur="3s" begin="1.57s" repeatCount="indefinite" values=".75;1;.75"/>
+      </circle>
+      <circle cx="233.0" cy="71.8" r="1.6" fill="#fff" opacity=".85"/>
+      <title>2026-11-05: 9 contribuições</title>
+    </g>
+    <g>
+      <circle cx="244.7" cy="84.4" r="8.3" fill="#2f5fb3" opacity="0" filter="url(#tglow)">
+        <animate attributeName="opacity" dur="4.0s" begin="1.09s" repeatCount="indefinite" values="0;.85;0" keyTimes="0;.12;.5"/>
+      </circle>
+      <circle cx="244.7" cy="84.4" r="3.3" fill="url(#drop1)">
+        <animate attributeName="opacity" dur="3s" begin="0.79s" repeatCount="indefinite" values=".75;1;.75"/>
+      </circle>
+      <circle cx="243.6" cy="83.3" r="1.0" fill="#fff" opacity=".85"/>
+      <title>2026-11-11: 1 contribuição</title>
+    </g>
+
+    <!-- Byte no centro da teia, dando um puxão a cada onda -->
+    <g transform="translate(250,166)">
+      <g>
+        <animateTransform attributeName="transform" type="translate" dur="4.0s" repeatCount="indefinite"
+          values="0 0;0 3;0 0;0 0" keyTimes="0;.06;.2;1" calcMode="spline" keySplines=".3 0 .7 1;.3 0 .7 1;0 0 1 1"/>
+        <g transform="scale(.3)">
+    <g class="byte-breath">
+      <ellipse cx="0" cy="76" rx="124" ry="9" fill="#000" opacity=".4"/>
+      
+      <g>
+        <path d="M-22.0 -4.0 L-98.0 -30.0 L-119.0 34.4" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M-22.0 -4.0 L-98.0 -30.0" stroke="url(#tbleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M-98.0 -30.0 L-119.0 34.4" stroke="url(#tbleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M-21.2 -6.3 L-97.2 -32.3" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="-70.2 -20.5 -63.3 -23.1 -58.4 -16.4 -64.5 -14.7" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-70.2 -20.5 L-63.8 -18.3 L-58.4 -16.4" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <polygon points="-122.2 33.3 -128.0 62.0 -115.8 35.5" fill="#24237a" stroke="#07061f" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="-119.0" cy="34.4" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="-98.0" cy="-30.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="-99.4" cy="-31.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M22.0 -4.0 L98.0 -30.0 L119.0 34.4" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22.0 -4.0 L98.0 -30.0" stroke="url(#tbleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M98.0 -30.0 L119.0 34.4" stroke="url(#tbleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M21.2 -6.3 L97.2 -32.3" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="70.2 -20.5 66.3 -14.2 58.4 -16.4 62.1 -21.6" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M70.2 -20.5 L63.8 -18.3 L58.4 -16.4" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <polygon points="115.8 35.5 128.0 62.0 122.2 33.3" fill="#24237a" stroke="#07061f" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="119.0" cy="34.4" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="98.0" cy="-30.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="96.6" cy="-31.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M-24.0 2.0 L-86.0 -46.0 L-101.4 33.8" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M-24.0 2.0 L-86.0 -46.0" stroke="url(#tbleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M-86.0 -46.0 L-101.4 33.8" stroke="url(#tbleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M-22.5 0.1 L-84.5 -47.9" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="-63.4 -28.5 -56.1 -28.7 -53.6 -20.9 -59.9 -21.2" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-63.4 -28.5 L-58.1 -24.4 L-53.6 -20.9" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <polygon points="-104.7 33.2 -108.0 68.0 -98.1 34.4" fill="#24237a" stroke="#07061f" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="-101.4" cy="33.8" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="-86.0" cy="-46.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="-87.4" cy="-47.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M24.0 2.0 L86.0 -46.0 L101.4 33.8" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24.0 2.0 L86.0 -46.0" stroke="url(#tbleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M86.0 -46.0 L101.4 33.8" stroke="url(#tbleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M22.5 0.1 L84.5 -47.9" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="63.4 -28.5 61.8 -21.3 53.6 -20.9 55.5 -27.0" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M63.4 -28.5 L58.1 -24.4 L53.6 -20.9" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <polygon points="98.1 34.4 108.0 68.0 104.7 33.2" fill="#24237a" stroke="#07061f" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="101.4" cy="33.8" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="86.0" cy="-46.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="84.6" cy="-47.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <!-- ponta de trás do cachecol -->
+      <path fill="url(#tbsilk)" fill-opacity=".75" stroke="#5a6fc4" stroke-width="1.3" stroke-linejoin="round" d="M-28 20 C-46 26 -70 18 -86 4 C-94 -2 -104 -2 -114 -8 L-108 2 L-120 4 C-104 14 -90 22 -74 26 C-58 30 -42 30 -26 28 Z">
+        <animate attributeName="d" dur="1.9s" repeatCount="indefinite" begin="-.5s" values="M-28 20 C-46 26 -70 18 -86 4 C-94 -2 -104 -2 -114 -8 L-108 2 L-120 4 C-104 14 -90 22 -74 26 C-58 30 -42 30 -26 28 Z;M-28 20 C-48 22 -70 10 -88 8 C-98 8 -108 12 -118 10 L-110 18 L-120 24 C-104 28 -90 30 -74 32 C-58 34 -42 32 -26 28 Z;M-28 20 C-46 26 -70 18 -86 4 C-94 -2 -104 -2 -114 -8 L-108 2 L-120 4 C-104 14 -90 22 -74 26 C-58 30 -42 30 -26 28 Z"/>
+      </path>
+      <polygon points="-21.9 -101.7 -11.9 -96.2 -14.7 -83.8 -22.9 -89.2" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-21.9 -101.7 L-18.0 -92.0 L-14.7 -83.8" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/><polygon points="21.9 -101.7 25.3 -90.8 14.7 -83.8 12.5 -93.3" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M21.9 -101.7 L18.0 -92.0 L14.7 -83.8" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/><polygon points="0.0 -109.7 8.1 -99.8 0.0 -88.1 -6.3 -97.1" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M0.0 -109.7 L0.0 -98.0 L0.0 -88.1" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <!-- abdômen com a runa espiral -->
+      <circle cx="0" cy="-40" r="52" fill="url(#tbabd)" stroke="#07061f" stroke-width="2.6"/>
+      <path d="M-40 -66 Q-26 -86 0 -91" stroke="#6f78ff" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".8"/>
+      <circle class="byte-rune" cx="0" cy="-52" r="26" fill="url(#tbruneglow)"/>
+      <path class="byte-rune" d="M0.0 -53.5 L0.4 -53.7 L0.9 -53.8 L1.5 -53.7 L2.1 -53.4 L2.6 -53.0 L3.0 -52.4 L3.3 -51.6 L3.3 -50.8 L3.2 -49.9 L2.7 -49.0 L2.1 -48.2 L1.1 -47.5 L0.1 -47.1 L-1.2 -47.0 L-2.4 -47.2 L-3.7 -47.7 L-4.8 -48.6 L-5.7 -49.7 L-6.3 -51.1 L-6.6 -52.7 L-6.5 -54.3 L-6.0 -56.0 L-5.0 -57.5 L-3.7 -58.7 L-2.1 -59.7 L-0.2 -60.2 L1.8 -60.3 L3.9 -59.8 L5.8 -58.9 L7.5 -57.4 L8.8 -55.6 L9.7 -53.4 L10.0 -51.1 L9.7 -48.6 L8.8 -46.3 L7.4 -44.1 L5.4 -42.4 L3.0 -41.1 L0.4 -40.4 L-2.5 -40.4 L-5.3 -41.1 L-7.9 -42.5 L-10.1 -44.5 L-11.9 -47.0 L-13.0 -49.9 L-13.3 -53.1 L-12.9 -56.4 L-11.7 -59.4 L-9.8 -62.2 L-7.2 -64.5 L-4.1 -66.1 L-0.6 -66.9 L3.0 -66.9 L6.6 -66.0 L9.9 -64.2 L12.7 -61.7 L14.9 -58.4 L16.3 -54.7 L16.7 -50.8 L16.2 -46.7" stroke="#5fb8ff" stroke-width="3.4" fill="none" stroke-linecap="round" filter="url(#tbglow)"/>
+      <polygon points="-51.5 -67.0 -38.9 -64.6 -37.7 -50.4 -48.3 -53.3" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-51.5 -67.0 L-44.0 -58.0 L-37.7 -50.4" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <polygon points="51.5 -67.0 51.4 -54.2 37.7 -50.4 38.6 -61.3" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M51.5 -67.0 L44.0 -58.0 L37.7 -50.4" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <polygon points="-58.9 -28.2 -52.6 -35.9 -42.4 -31.5 -48.4 -25.3" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-58.9 -28.2 L-50.0 -30.0 L-42.4 -31.5" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <polygon points="58.9 -28.2 50.1 -23.5 42.4 -31.5 50.3 -34.9" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M58.9 -28.2 L50.0 -30.0 L42.4 -31.5" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      
+      <g>
+        <path d="M-24.0 8.0 L-62.0 -42.0 L-71.9 28.7" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M-24.0 8.0 L-62.0 -42.0" stroke="url(#tbleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M-62.0 -42.0 L-71.9 28.7" stroke="url(#tbleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M-22.1 6.5 L-60.1 -43.5" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="-49.0 -24.9 -41.8 -23.2 -41.4 -14.9 -47.5 -16.9" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-49.0 -24.9 L-44.9 -19.5 L-41.4 -14.9" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <g class="byte-blade" filter="url(#tbglow)">
+          <polygon points="-71.9 28.7 -80.5 42.9 -78.8 77.9 -74.0 43.8" fill="url(#tbcrysL)"/>
+          <polygon points="-71.9 28.7 -67.6 44.7 -78.8 77.9 -74.0 43.8" fill="url(#tbcrysR)"/>
+          <polygon points="-71.9 28.7 -80.5 42.9 -78.8 77.9 -67.6 44.7" fill="none" stroke="#1d4fa0" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+        <circle cx="-71.9" cy="28.7" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="-62.0" cy="-42.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="-63.4" cy="-43.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M24.0 8.0 L62.0 -42.0 L71.9 28.7" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24.0 8.0 L62.0 -42.0" stroke="url(#tbleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M62.0 -42.0 L71.9 28.7" stroke="url(#tbleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M22.1 6.5 L60.1 -43.5" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="49.0 -24.9 49.3 -17.5 41.4 -14.9 41.7 -21.3" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M49.0 -24.9 L44.9 -19.5 L41.4 -14.9" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <g class="byte-blade" filter="url(#tbglow)">
+          <polygon points="71.9 28.7 67.6 44.7 78.8 77.9 74.0 43.8" fill="url(#tbcrysL)"/>
+          <polygon points="71.9 28.7 80.5 42.9 78.8 77.9 74.0 43.8" fill="url(#tbcrysR)"/>
+          <polygon points="71.9 28.7 67.6 44.7 78.8 77.9 80.5 42.9" fill="none" stroke="#1d4fa0" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+        <circle cx="71.9" cy="28.7" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="62.0" cy="-42.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="60.6" cy="-43.4" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M-20.0 20.0 L-58.0 2.0 L-49.3 42.9" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M-20.0 20.0 L-58.0 2.0" stroke="url(#tbleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M-58.0 2.0 L-49.3 42.9" stroke="url(#tbleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M-19.0 17.8 L-57.0 -0.2" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="-47.0 7.2 -39.8 5.4 -35.7 12.5 -42.0 13.6" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-47.0 7.2 L-40.9 10.1 L-35.7 12.5" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <g class="byte-blade" filter="url(#tbglow)">
+          <polygon points="-49.3 42.9 -53.8 53.0 -42.8 73.9 -47.5 51.7" fill="url(#tbcrysL)"/>
+          <polygon points="-49.3 42.9 -41.1 50.3 -42.8 73.9 -47.5 51.7" fill="url(#tbcrysR)"/>
+          <polygon points="-49.3 42.9 -53.8 53.0 -42.8 73.9 -41.1 50.3" fill="none" stroke="#1d4fa0" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+        <circle cx="-49.3" cy="42.9" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="-58.0" cy="2.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="-59.4" cy="0.6" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <g>
+        <path d="M20.0 20.0 L58.0 2.0 L49.3 42.9" stroke="#07061f" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20.0 20.0 L58.0 2.0" stroke="url(#tbleg)" stroke-width="8.5" fill="none" stroke-linecap="round"/>
+        <path d="M58.0 2.0 L49.3 42.9" stroke="url(#tbleg)" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+        <path d="M19.0 17.8 L57.0 -0.2" stroke="#5a60d6" stroke-width="1.8" stroke-linecap="round" opacity=".9"/><polygon points="47.0 7.2 43.8 13.9 35.7 12.5 38.9 7.0" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M47.0 7.2 L40.9 10.1 L35.7 12.5" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+        <g class="byte-blade" filter="url(#tbglow)">
+          <polygon points="49.3 42.9 41.1 50.3 42.8 73.9 47.5 51.7" fill="url(#tbcrysL)"/>
+          <polygon points="49.3 42.9 53.8 53.0 42.8 73.9 47.5 51.7" fill="url(#tbcrysR)"/>
+          <polygon points="49.3 42.9 41.1 50.3 42.8 73.9 53.8 53.0" fill="none" stroke="#1d4fa0" stroke-width="1.5" stroke-linejoin="round"/>
+        </g>
+        <circle cx="49.3" cy="42.9" r="3.2" fill="#c98a1c" stroke="#07061f" stroke-width="1.6"/>
+        <circle cx="58.0" cy="2.0" r="5" fill="#c98a1c" stroke="#07061f" stroke-width="2"/>
+        <circle cx="56.6" cy="0.6" r="1.5" fill="#ffe2a0"/>
+      </g>
+      <!-- cabeça -->
+      <ellipse cx="0" cy="10" rx="38" ry="31" fill="url(#tbhead)" stroke="#07061f" stroke-width="2.6"/>
+      <path d="M-24 -10 Q-14 -20 4 -21" stroke="#6f78ff" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".8"/>
+      <polygon points="-40.7 -7.8 -31.3 -4.4 -32.0 6.6 -39.8 3.1" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M-40.7 -7.8 L-36.0 0.0 L-32.0 6.6" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <polygon points="40.7 -7.8 42.1 2.0 32.0 6.6 31.4 -1.9" fill="url(#tbmoon)" stroke="#4a4f9e" stroke-width="1.4" stroke-linejoin="round"/><path d="M40.7 -7.8 L36.0 0.0 L32.0 6.6" stroke="#ffffff" stroke-width=".9" opacity=".7" fill="none"/>
+      <g class="byte-blade" filter="url(#tbglow)"><polygon points="-15.6 -18.4 -34.0 -42.0 -26.3 -27.7" fill="url(#tbcrysL)"/><polygon points="-24.4 -13.6 -34.0 -42.0 -26.3 -27.7" fill="url(#tbcrysR)"/><polygon points="-15.6 -18.4 -34.0 -42.0 -24.4 -13.6" fill="none" stroke="#1d4fa0" stroke-width="1.4" stroke-linejoin="round"/></g><g class="byte-blade" filter="url(#tbglow)"><polygon points="24.4 -13.6 34.0 -42.0 26.3 -27.7" fill="url(#tbcrysL)"/><polygon points="15.6 -18.4 34.0 -42.0 26.3 -27.7" fill="url(#tbcrysR)"/><polygon points="24.4 -13.6 34.0 -42.0 15.6 -18.4" fill="none" stroke="#1d4fa0" stroke-width="1.4" stroke-linejoin="round"/></g>
+      <!-- 6 olhos pequenos luminosos -->
+      <g filter="url(#tbglow)">
+        <circle class="byte-mini" cx="-5" cy="-12" r="2.7" fill="#7cd0ff"/>
+        <circle class="byte-mini" cx="5" cy="-12" r="2.7" fill="#7cd0ff"/>
+        <circle class="byte-mini m2" cx="-14" cy="-8" r="2.4" fill="#7cd0ff"/>
+        <circle class="byte-mini m2" cx="14" cy="-8" r="2.4" fill="#7cd0ff"/>
+        <circle class="byte-mini m3" cx="-23" cy="-3" r="2" fill="#7cd0ff"/>
+        <circle class="byte-mini m3" cx="23" cy="-3" r="2" fill="#7cd0ff"/>
+      </g>
+      <!-- 2 olhos grandes âmbar -->
+      <g class="byte-eyes">
+        <circle cx="-14" cy="11" r="11.5" fill="url(#tbeye)" stroke="#07061f" stroke-width="2.2"/>
+        <circle cx="14" cy="11" r="11.5" fill="url(#tbeye)" stroke="#07061f" stroke-width="2.2"/>
+        <ellipse cx="-12" cy="12.5" rx="5" ry="6.4" fill="#120800"/>
+        <ellipse cx="12" cy="12.5" rx="5" ry="6.4" fill="#120800"/>
+        <circle cx="-17" cy="8.5" r="2.6" fill="#fff"/>
+        <circle cx="9" cy="8.5" r="2.6" fill="#fff"/>
+        <circle cx="-9" cy="16" r="1.1" fill="#fff" opacity=".8"/>
+        <circle cx="15" cy="16" r="1.1" fill="#fff" opacity=".8"/>
+      </g>
+      <!-- pálpebras (expressão determinada) -->
+      <path d="M-28 2 Q-15 -1 -1 6 L-1 -2 L-28 -2 Z" fill="#23227a"/><path d="M-27 2 Q-15 -1 -1 6" stroke="#07061f" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M28 2 Q15 -1 1 6 L1 -2 L28 -2 Z" fill="#23227a"/><path d="M27 2 Q15 -1 1 6" stroke="#07061f" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <!-- presas -->
+      <path d="M-9 34 Q-11 45 -5 50 Q-6 42 -3 35 Z" fill="#eef0ff" stroke="#07061f" stroke-width="1.6"/>
+      <path d="M9 34 Q11 45 5 50 Q6 42 3 35 Z" fill="#eef0ff" stroke="#07061f" stroke-width="1.6"/>
+      <!-- cachecol de seda (rasgado) -->
+      <path fill="url(#tbsilk)" fill-opacity=".9" stroke="#5a6fc4" stroke-width="1.4" stroke-linejoin="round" d="M-30 14 C-52 4 -58 -26 -74 -44 C-82 -54 -96 -58 -108 -70 L-100 -56 L-112 -60 C-96 -40 -80 -34 -70 -18 C-60 -2 -46 14 -28 24 Z">
+        <animate attributeName="d" dur="1.6s" repeatCount="indefinite" values="M-30 14 C-52 4 -58 -26 -74 -44 C-82 -54 -96 -58 -108 -70 L-100 -56 L-112 -60 C-96 -40 -80 -34 -70 -18 C-60 -2 -46 14 -28 24 Z;M-30 14 C-56 8 -66 -18 -78 -36 C-88 -50 -104 -48 -118 -56 L-106 -46 L-118 -44 C-100 -30 -84 -30 -72 -14 C-62 0 -46 14 -28 24 Z;M-30 14 C-52 4 -58 -26 -74 -44 C-82 -54 -96 -58 -108 -70 L-100 -56 L-112 -60 C-96 -40 -80 -34 -70 -18 C-60 -2 -46 14 -28 24 Z"/>
+      </path>
+      <path d="M-37 18 Q0 36 37 18 L38 27 L33 32 L29 29 Q0 43 -14 39 L-18 44 L-23 38 Q-33 35 -38 28 Z" fill="url(#tbsilk)" stroke="#5a6fc4" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M-34 22 Q0 39 34 22" stroke="#eef3ff" stroke-width="1.2" fill="none" opacity=".8"/>
+      <path d="M-26 30 Q-4 40 20 33" stroke="#6f86d8" stroke-width="1" fill="none" opacity=".8"/>
+    </g></g>
+      </g>
+    </g>
+  </g>
+
+  <!-- painel -->
+  <text x="540" y="70" class="h">A Teia da Byte</text>
+  <text x="540" y="92" class="s">O seu último ano de contribuições, tecido em seda.</text>
+  <g transform="translate(540,124)"><text class="big">22</text><text x="42" y="-1" class="s">contribuições no último ano</text></g><g transform="translate(540,160)"><text class="big">6</text><text x="29" y="-1" class="s">dias tecidos na teia</text></g><g transform="translate(540,196)"><text class="big">Nov</text><text x="55" y="-1" class="s">mês mais ativo</text></g><g transform="translate(540,232)"><text class="big">05/11</text><text x="81" y="-1" class="s">maior gota (9 contribuições)</text></g>
+  <g transform="translate(540,284)">
+    <text class="s" y="4">menos</text>
+    <circle cx="70" cy="0" r="3.3" fill="url(#drop1)"/><circle cx="88" cy="0" r="4.0" fill="url(#drop2)"/><circle cx="106" cy="0" r="4.7" fill="url(#drop3)"/><circle cx="124" cy="0" r="5.4" fill="url(#drop4)"/>
+    <text class="s" x="138" y="4">mais</text>
+  </g>
+  </g>
+  <rect x=".5" y=".5" width="879" height="323" rx="6" fill="none" stroke="#1e3a6e"/>
+</svg>
